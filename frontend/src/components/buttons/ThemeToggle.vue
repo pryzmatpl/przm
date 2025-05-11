@@ -1,5 +1,5 @@
 <script setup>
-import {ref, watch, onMounted} from 'vue';
+import {ref, onMounted} from 'vue';
 
 // Create a reactive variable to track dark mode state
 const isDarkMode = ref(true);

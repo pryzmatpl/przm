@@ -1,5 +1,11 @@
 <script setup>
 import {inject, ref} from 'vue';
+
+// Add a component name definition
+defineOptions({
+  name: 'PublicationsList'
+});
+
 const $t = inject("$t");
 const papers = ref([
   {

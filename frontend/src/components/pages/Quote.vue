@@ -15,6 +15,11 @@ const generateMailtoLink = () => {
   const body = encodeURIComponent(`Name: ${form.value.name}\nEmail: ${form.value.email}\n\n${form.value.message}`);
   return `mailto:pryzmat@pryzmat.pl?subject=${subject}&body=${body}`;
 };
+
+// Add defineOptions to set a multi-word component name
+defineOptions({
+  name: 'QuotePage'
+});
 </script>
 
 <template>

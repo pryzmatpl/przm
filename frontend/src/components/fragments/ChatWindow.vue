@@ -1,6 +1,5 @@
 <script setup>
 import {ref, onMounted, inject} from 'vue';
-import {config} from '@/config.js';
 
 const $t = inject('$t');
 

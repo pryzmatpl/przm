@@ -1,7 +1,12 @@
 <script setup>
-import {defineComponent, defineProps, inject} from 'vue';
+import {defineProps, inject} from 'vue';
 import PrizmCrystalOffering from '@c/asset/PrizmCrystalOffering.vue';
 import PillButton from "@c/buttons/PillButton.vue";
+
+// Define component name using defineOptions
+defineOptions({
+  name: 'ContentTile'
+});
 
 const props = defineProps({
   title: String,
@@ -15,10 +20,6 @@ const content = {
   link: props.link,
   buttonText: props.title,
 };
-
-defineComponent({
-  name: 'Tile',
-});
 </script>
 
 <template>

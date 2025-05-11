@@ -17,11 +17,6 @@ const props = defineProps({
   },
 });
 
-// Get the file extension
-const getFileExtension = (filename) => {
-  return filename.split('.').pop();
-};
-
 // Get the file name without extension
 const getFileNameWithoutExtension = (filename) => {
   return filename.split('.').slice(0, -1).join('.');

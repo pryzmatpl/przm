@@ -1,5 +1,5 @@
 <script setup>
-import {computed, defineProps, ref, onMounted} from 'vue';
+import {defineProps, ref, onMounted} from 'vue';
 
 // Define props
 const props = defineProps({
@@ -34,11 +34,6 @@ onMounted(() => {
   };
   fallbackImg.src = props.item.imageFallback;
 });
-
-// Computed property for resolved image (original format as fallback)
-const resolvedImage = function(imageSrc) {
-  return require(`@/assets/${imageSrc}`);
-};
 </script>
 
 <template>

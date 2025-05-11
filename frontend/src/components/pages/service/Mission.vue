@@ -3,6 +3,11 @@ import {inject} from 'vue';
 import WelcomeBox from '@c/fragments/WelcomeBox.vue';
 
 const $t = inject('$t');
+
+// Add defineOptions to set a multi-word component name
+defineOptions({
+  name: 'MissionServicePage'
+});
 </script>
 
 <template>

@@ -1,14 +1,15 @@
 <script setup>
 import {inject, ref, onMounted, onUnmounted} from 'vue';
-import {useRoute} from 'vue-router';
 import AppLogo from '../asset/AppLogo.vue';
 import NavButton from '@c/buttons/NavButton.vue';
-import PrizmIcon from '@c/asset/PrizmIcon.vue';
-import PrizmCrystalOffering from "@c/asset/PrizmCrystalOffering.vue";
 import ThemeToggle from '@c/buttons/ThemeToggle.vue';
 
+// Define component name
+defineOptions({
+  name: 'MainNavbar'
+});
+
 const $t=inject("$t");
-const route = useRoute();
 const isNavOpen = ref(false);
 const lastScrollY = ref(0);
 const isNavbarVisible = ref(true);

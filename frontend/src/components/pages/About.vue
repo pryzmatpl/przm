@@ -1,9 +1,13 @@
 <script setup>
 import {inject} from 'vue';
-import WelcomeBox from '@c/fragments/WelcomeBox.vue';
 import ComponentSectionLImage from "@c/fragments/ComponentSectionLImage.vue";
 import ComponentSectionRImage from "@c/fragments/ComponentSectionRImage.vue";
 import Publications from "@c/fragments/Publications.vue";
+
+// Define the component name
+defineOptions({
+  name: 'AboutPage'
+});
 
 const $t = inject('$t');
 

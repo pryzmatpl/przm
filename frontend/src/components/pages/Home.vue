@@ -4,13 +4,12 @@ import WelcomeBox from '@c/fragments/WelcomeBox.vue';
 import ComponentSectionLImage from "@c/fragments/ComponentSectionLImage.vue";
 import ComponentSectionRImage from "@c/fragments/ComponentSectionRImage.vue";
 
-const $t=inject('$t');
+// Define the component name
+defineOptions({
+  name: 'HomePage'
+});
 
-const name = 'HomePage';
-const currentColor = 'steelblue';
-const props = {
-  msg: String,
-};
+const $t=inject('$t');
 
 // Check if video versions exist for prism.gif
 const prismMp4Exists = computed(() => {

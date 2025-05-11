@@ -1,5 +1,5 @@
 <script setup>
-import {defineProps, toRefs, inject} from 'vue';
+import {defineProps, inject} from 'vue';
 const $t=inject('$t');
 
 const props = defineProps({
@@ -19,8 +19,6 @@ const props = defineProps({
     default: true,
   },
 });
-
-const propses = toRefs(props);
 </script>
 
 <template>

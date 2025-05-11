@@ -1,8 +1,13 @@
 <script setup>
-import PrizmIcon from '@c/asset/PrizmIcon.vue';
 import {inject, ref} from 'vue';
 import AppLogo from "@c/asset/AppLogo.vue";
 import SocialColumn from "@c/fragments/SocialColumn.vue";
+
+// Define component name
+defineOptions({
+  name: 'SiteFooter'
+});
+
 const $t = inject('$t');
 
 const services = [

@@ -1,8 +1,12 @@
 <script setup>
 import {inject} from 'vue';
-import WelcomeBox from '@c/fragments/WelcomeBox.vue';
 import ChatWindow from '@c/fragments/ChatWindow.vue';
 import PrizmCrystalOffering from '@c/asset/PrizmCrystalOffering.vue';
+
+// Define the component name
+defineOptions({
+  name: 'ContactPage'
+});
 
 const $t = inject('$t');
 </script>

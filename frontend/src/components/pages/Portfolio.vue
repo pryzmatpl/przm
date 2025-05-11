@@ -5,6 +5,11 @@ import PortfolioCard from '@c/cards/PortfolioCard.vue';
 import PortfolioService from '@/services/PortfolioService';
 /* eslint-enable object-curly-spacing */
 
+// Add defineOptions to set a multi-word component name
+defineOptions({
+  name: 'PortfolioPage'
+});
+
 // Portfolio items data from service
 const portfolioItems = ref([]);
 

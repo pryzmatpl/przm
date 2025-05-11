@@ -43,7 +43,7 @@ const resolveComponent = computed(() => {
 // Watch route changes and dynamically update the component
 watch(
     () => route.name,
-    (newName) => {
+    () => {
       const componentLoader = resolveComponent.value;
       if (componentLoader) {
         // Use markRaw to prevent the component from becoming reactive

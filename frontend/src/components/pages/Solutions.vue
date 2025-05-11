@@ -1,7 +1,11 @@
 <script setup>
 import {inject} from 'vue';
 import Tile from '@c/fragments/Tile.vue';
-import WelcomeBox from '@c/fragments/WelcomeBox.vue';
+
+// Define the component name
+defineOptions({
+  name: 'SolutionsPage'
+});
 
 const $t = inject('$t');
 
