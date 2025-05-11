@@ -1,0 +1,23 @@
+// Main color palette
+$primary: #00e676;  // Vibrant green for accents
+$primary-dark: #00c853;
+$secondary: #263238; // Dark blue-gray for secondary elements
+$background-dark: #121212; // Main background
+$background-light: #1e1e1e; // Card backgrounds, etc.
+$text-primary: #ffffff;
+$text-secondary: #b0bec5;
+$success: #00e676;
+$warning: #ffab00;
+$danger: #ff5252;
+
+// Gradients
+$primary-gradient: linear-gradient(135deg, $primary, $primary-dark);
+$dark-gradient: linear-gradient(135deg, $background-dark, $secondary);
+
+// Shadows
+$card-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+$button-shadow: 0 4px 10px rgba(0, 230, 118, 0.2);
+
+// Animation timing
+$transition-fast: 150ms;
+$transition-normal: 300ms; 

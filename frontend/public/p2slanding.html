@@ -1,0 +1,290 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row =>
+                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
+                );
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRZM | Empowering Creativity with Photos2STL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .dark-mode .bg-white {
+            background-color: #2d3748;
+        }
+        .dark-mode .text-gray-800 {
+            color: #e2e8f0;
+        }
+        .hero-bg {
+            background: linear-gradient(to right, #007BFF, #00B7EB);
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header with Dark/Light Mode Toggle -->
+    <header class="fixed top-0 w-full bg-white shadow-md z-10">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">PRZM</h1>
+            <div class="flex space-x-4">
+                <a href="#home" class="text-gray-600 hover:text-blue-600">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600">Services</a>
+                <a href="#process" class="text-gray-600 hover:text-blue-600">Process</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+                <button id="theme-toggle" class="text-gray-600 hover:text-blue-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">From 2D to 3D in Minutes</h1>
+                <p class="text-lg mb-6">Transform your images into 3D models with Photos2STL. Perfect for creators, designers, and 3D printing enthusiasts.</p>
+                <p class="text-md mb-6">We specialize in empowering small businesses and hobbyists to bring ideas to life effortlessly.</p>
+                <a href="#contact" class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600">Get Started Now</a>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="https://via.placeholder.com/400x300?text=3D+Model" alt="3D Model Example" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section id="value" class="py-16 px-4 bg-white">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold mb-4">Why Choose PRZM?</h2>
+            <p class="text-lg mb-8">We’re here to make 3D printing accessible to everyone, with a focus on simplicity and creativity.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Unique Simplicity</h3>
+                    <p>Our Photos2STL service turns complex 2D images into 3D models in just a few clicks.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Empowering Creators</h3>
+                    <p>From hobbyists to professionals, we help you bring your ideas to life without barriers.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Why We Exist</h3>
+                    <p>To democratize 3D printing, making it easy and fun for everyone to create.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+            <p class="text-lg mb-8">We specialize exclusively in transforming 2D images into 3D models for printing.</p>
+            <div class="grid grid-cols-1 max-w-2xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/100?text=Icon" alt="Photos2STL Icon" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Photos2STL</h3>
+                    <p>Convert your 2D images into 3D STL files ready for printing. Fast, simple, and reliable.</p>
+                    <p class="mt-4"><strong>Benefits:</strong> Save time, reduce costs, and unleash your creativity.</p>
+                    <a href="#contact" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="py-16 px-4 bg-white">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold mb-4">Our 3-Step Process</h2>
+            <p class="text-lg mb-8">We make it easy to go from idea to 3D print with our streamlined framework.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">1. Upload</h3>
+                    <p>Share your 2D image through our platform.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">2. Convert</h3>
+                    <p>Our technology transforms your image into a 3D STL file.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">3. Print</h3>
+                    <p>Download your model and start 3D printing!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Benefits -->
+    <section id="benefits" class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold mb-4">What You Gain</h2>
+            <p class="text-lg mb-8">With Photos2STL, you get results that transform your creative process.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Save Time</h3>
+                    <p>Create 3D models in minutes, not hours.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Reduce Costs</h3>
+                    <p>Affordable conversion without expensive software.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Unleash Creativity</h3>
+                    <p>Turn any image into a printable 3D masterpiece.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 px-4 bg-white">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold mb-4">About PRZM</h2>
+            <p class="text-lg mb-8">Founded by Piotr Słupski, PRZM is dedicated to empowering creators through innovative technology.</p>
+            <div class="max-w-2xl mx-auto">
+                <h3 class="text-xl font-semibold mb-2">A Word from Piotr</h3>
+                <p>“My mission is to make 3D printing accessible to everyone. With Photos2STL, we’re breaking down barriers and helping creators bring their visions to life. Let’s build something extraordinary together!”</p>
+                <p class="mt-4 text-sm">— Piotr Słupski, Founder</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="tech" class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold mb-4">Our Technology</h2>
+            <p class="text-lg mb-8">We use cutting-edge tools to deliver seamless 2D-to-3D conversion.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Cloud-Based Platform</h3>
+                    <p>Access Photos2STL from anywhere, with no software installation needed.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Conversion</h3>
+                    <p>Our technology intelligently processes images for high-quality 3D models.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 px-4 bg-white">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p class="text-lg mb-8">Got questions? We’ve got answers.</p>
+            <div class="max-w-3xl mx-auto text-left">
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold">What is Photos2STL?</h3>
+                    <p>A service that converts 2D images into 3D STL files for 3D printing.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold">Who can use it?</h3>
+                    <p>Anyone from hobbyists to professional designers looking to create 3D models.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">How long does it take?</h3>
+                    <p>Most conversions are completed in minutes, depending on image complexity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 px-4 bg-blue-600 text-white">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold mb-4">Let’s Build Something Extraordinary</h2>
+            <p class="text-lg mb-8">We take on select projects to ensure quality. Contact us to see if we’re a fit!</p>
+            <div class="max-w-md mx-auto">
+                <p class="mb-4"><strong>Email:</strong> <a href="mailto:piotr.slupski@pryzmat.pl" class="underline">piotr.slupski@pryzmat.pl</a></p>
+                <p class="mb-4"><strong>Phone:</strong> <a href="tel:+48883961639" class="underline">+48 883 961 639</a></p>
+                <a href="mailto:piotr.slupski@pryzmat.pl" class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600">Book a Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="text-xl font-bold mb-4">PRZM | Photos2STL</h3>
+            <p class="mb-4">Empowering creators to turn ideas into reality.</p>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
+            </div>
+            <p class="text-sm"><a href="#" class="underline">Privacy Policy</a> | <a href="#" class="underline">Terms of Service</a></p>
+            <p class="text-sm mt-2">&copy; 2025 PRZM. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark/Light Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            toggleButton.innerHTML = isDark
+                ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>`
+                : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>`;
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

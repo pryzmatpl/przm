@@ -1,0 +1,145 @@
+/* Import Design System */
+@import './design-system.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #0D1117;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Remove focus outlines for mouse users, but keep for keyboard navigators */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Page Transitions */
+.page-container {
+  animation: fadeIn var(--transition-normal);
+}
+
+/* Section Spacing */
+.page-section {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+  .page-section {
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-3xl);
+  }
+}
+
+/* Image Optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  
+  h1, .headline-1 {
+    font-size: clamp(1.875rem, 8vw, 2.5rem);
+  }
+  
+  /* Tighter spacing on mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Improve mobile touch areas */
+@media (hover: none) and (pointer: coarse) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Content Animation */
+.content-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.content-fade-in-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.content-fade-in-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.content-fade-in-delay-3 {
+  animation-delay: 0.3s;
+}
+
+/* Accessible form scaling */
+@media (max-width: 480px) {
+  input, select, textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* High-contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #0051cc;
+    --color-bg-glass: rgba(10, 20, 30, 0.9);
+  }
+  
+  .text-gradient {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} 

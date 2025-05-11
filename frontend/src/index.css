@@ -1,0 +1,366 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import modern variable fonts for 2025 design */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap');
+
+@layer base {
+    /* Basic typography reset with modern styling */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-display font-bold tracking-tight;
+    }
+    
+    h1 {
+        @apply text-4xl md:text-5xl;
+    }
+    
+    h2 {
+        @apply text-3xl md:text-4xl;
+    }
+    
+    h3 {
+        @apply text-2xl md:text-3xl;
+    }
+    
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+        line-height: 1.5;
+        font-weight: 400;
+        background: #131b2b;
+        color: rgba(255, 255, 255, 0.99);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode styles */
+    .light body {
+        background: #f5f5fa;
+        color: rgba(10, 10, 12, 0.95);
+    }
+    
+    /* Modern color variables */
+    :root {
+        /* Dark mode colors by default */
+        --color-primary: 19, 27, 43;       /* #131b2b */
+        --color-primary-dark: 13, 19, 30;   /* #0d131e */
+        --color-primary-light: 38, 54, 86; /* #263656 */
+        
+        --color-secondary: 112, 0, 255;      /* #7000FF */
+        --color-secondary-dark: 92, 0, 204;  /* #5C00CC */
+        --color-secondary-light: 157, 77, 255; /* #9D4DFF */
+        
+        --color-success: 0, 204, 119;        /* #00CC77 */
+        --color-warning: 255, 136, 0;        /* #FF8800 */
+        --color-danger: 255, 51, 85;         /* #FF3355 */
+        --color-info: 0, 204, 255;           /* #00CCFF */
+
+        /* Text Colors for Dark Mode */
+        --color-text-primary: 255, 255, 255;  /* #FFFFFF */
+        --color-text-secondary: 220, 220, 230; /* rgba(255, 255, 255, 0.85) */
+        --color-text-muted: 180, 180, 190;    /* rgba(255, 255, 255, 0.6) */
+
+        /* Background Colors for Dark Mode */
+        --color-bg-dark: rgba(20, 30, 48, 0.6);
+        --color-bg-glass: rgba(30, 30, 35, 0.3);
+        --color-bg-input: rgba(20, 30, 40, 0.8);
+        
+        /* Border radius variables for consistency */
+        --border-radius-sm: 0.25rem;   /* 4px */
+        --border-radius-md: 0.5rem;    /* 8px */
+        --border-radius-lg: 0.75rem;   /* 12px */
+        --border-radius-xl: 1rem;      /* 16px */
+        --border-radius-2xl: 1.5rem;   /* 24px */
+        --border-radius-full: 9999px;  /* fully rounded */
+    }
+
+    /* Light mode color variables */
+    .light {
+        --color-primary: 245, 245, 250;       /* #f5f5fa */
+        --color-primary-dark: 230, 230, 235;   /* #e6e6eb */
+        --color-primary-light: 255, 255, 255; /* #ffffff */
+        
+        /* Keep accent colors consistent for brand recognition */
+        --color-secondary: 112, 0, 255;      /* #7000FF */
+        --color-secondary-dark: 92, 0, 204;  /* #5C00CC */
+        --color-secondary-light: 157, 77, 255; /* #9D4DFF */
+        
+        /* Text Colors for Light Mode */
+        --color-text-primary: 10, 10, 12;    /* rgba(10, 10, 12, 0.95) */
+        --color-text-secondary: 40, 40, 45;  /* rgba(40, 40, 45, 0.8) */
+        --color-text-muted: 80, 80, 85;      /* rgba(80, 80, 85, 0.6) */
+
+        /* Background Colors for Light Mode */
+        --color-bg-dark: rgba(245, 245, 250, 0.6);
+        --color-bg-glass: rgba(255, 255, 255, 0.3);
+        --color-bg-input: rgba(240, 240, 245, 0.8);
+    }
+}
+
+@layer utilities {
+    /* Enhanced text color utilities with better contrast */
+    .text-primary {
+        color: rgb(var(--color-text-primary));
+    }
+    
+    .text-secondary {
+        color: rgb(var(--color-text-secondary));
+    }
+    
+    .text-muted {
+        color: rgb(var(--color-text-muted));
+    }
+    
+    .text-color-primary {
+        color: rgb(var(--color-primary));
+    }
+    
+    .text-color-primary-dark {
+        color: rgb(var(--color-primary-dark));
+    }
+    
+    .text-color-primary-light {
+        color: rgb(var(--color-primary-light));
+    }
+    
+    .text-color-secondary {
+        color: rgb(var(--color-secondary));
+    }
+    
+    .text-slate-900 {
+        color: #0f172a;
+    }
+    
+    .text-slate-600 {
+        color: #475569;
+    }
+    
+    .dark .text-slate-400 {
+        color: #94a3b8;
+    }
+
+    .light .text-gray-300 {
+        color: rgba(40, 40, 45, 0.8);
+    }
+    
+    /* Background colors with opacity support */
+    .bg-primary {
+        background-color: rgb(var(--color-primary));
+    }
+    
+    .bg-primary-dark {
+        background-color: rgb(var(--color-primary-dark));
+    }
+    
+    .bg-primary-light {
+        background-color: rgb(var(--color-primary-light));
+    }
+    
+    .bg-secondary {
+        background-color: rgb(var(--color-secondary));
+    }
+    
+    /* Glass morphism utilities */
+    .bg-glass {
+        background-color: var(--color-bg-glass);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--border-radius-xl);
+    }
+    
+    .light .bg-glass {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    
+    /* Modern card utilities */
+    .card-hover {
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+
+    .dark .card-hover:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+    }
+
+    .light .card-hover:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+    
+    /* Gradient text utility */
+    .text-gradient {
+        background: linear-gradient(135deg, rgb(var(--color-primary)), rgb(var(--color-secondary)));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    /* Hero section with consistent gradient */
+    .hero-section {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+        z-index: -1;
+    }
+
+    .light .hero-section::before {
+        background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.05) 0%, transparent 70%);
+    }
+    
+    /* Standard border radius utilities for consistency */
+    .rounded-pryzm-sm {
+        border-radius: var(--border-radius-sm);
+    }
+    
+    .rounded-pryzm-md {
+        border-radius: var(--border-radius-md);
+    }
+    
+    .rounded-pryzm-lg {
+        border-radius: var(--border-radius-lg);
+    }
+    
+    .rounded-pryzm-xl {
+        border-radius: var(--border-radius-xl);
+    }
+    
+    .rounded-pryzm-2xl {
+        border-radius: var(--border-radius-2xl);
+    }
+    
+    .rounded-pryzm-full {
+        border-radius: var(--border-radius-full);
+    }
+}
+
+/* Modern form controls */
+@layer components {
+    .btn {
+        @apply px-4 py-2 font-medium transition-all duration-300;
+        border-radius: var(--border-radius-md);
+    }
+    
+    .btn-primary {
+        @apply bg-primary text-white hover:bg-primary-dark shadow-md hover:shadow-lg;
+    }
+    
+    .light .btn-primary {
+        color: rgba(10, 10, 12, 0.95);
+    }
+    
+    .btn-secondary {
+        @apply border border-primary text-primary hover:bg-opacity-10 hover:bg-primary;
+    }
+    
+    .input-modern {
+        @apply w-full px-4 py-3 bg-black bg-opacity-20 border border-white border-opacity-10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-30 transition-all duration-300 text-white placeholder-white placeholder-opacity-40;
+        border-radius: var(--border-radius-md);
+    }
+
+    .light .input-modern {
+        @apply bg-white bg-opacity-20 border-black border-opacity-10 text-black placeholder-black placeholder-opacity-40;
+    }
+    
+    /* Standard card component with consistent styling */
+    .card {
+        @apply bg-glass p-6 transition-all duration-300;
+        border-radius: var(--border-radius-xl);
+    }
+    
+    .card-hover {
+        @apply hover:shadow-xl;
+    }
+
+    .dark .card-hover {
+        @apply hover:shadow-blue-900/20;
+    }
+
+    .light .card-hover {
+        @apply hover:shadow-gray-400/30;
+    }
+    
+    /* Standard CTA buttons with consistent styling */
+    .btn-cta {
+        @apply px-8 py-3 bg-primary text-white font-medium hover:bg-primary-light transition-all duration-300 shadow-lg;
+        border-radius: var(--border-radius-full);
+    }
+    
+    .btn-cta-secondary {
+        @apply px-8 py-3 bg-secondary text-white font-medium hover:bg-secondary-light transition-all duration-300 shadow-lg;
+        border-radius: var(--border-radius-full);
+    }
+    
+    /* Portfolio tile with consistent styling */
+    .portfolio-tile {
+        position: relative;
+        isolation: isolate;
+        border-radius: var(--border-radius-xl);
+        overflow: hidden;
+    }
+}
+
+/* Font family utilities */
+.font-primary {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+
+.font-display {
+    font-family: 'Montserrat', 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+}
+
+/* Page container with global animations */
+.page-container {
+    position: relative;
+    min-height: 100vh;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Global animation for consistent fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content-fade-in-delay-1 {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    animation-delay: 0.1s;
+    animation-fill-mode: both;
+}
+
+.content-fade-in-delay-2 {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+.content-fade-in-delay-3 {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
