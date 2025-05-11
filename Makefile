@@ -30,10 +30,11 @@ help:
 	@echo -e "${YELLOW}make backend-install${NC}  - Install backend dependencies"
 	@echo -e "${YELLOW}make frontend-test${NC}    - Run frontend tests"
 	@echo -e "${YELLOW}make backend-test${NC}     - Run backend tests"
+	@echo -e "${YELLOW}make go-tidy${NC}          - Update go.mod and go.sum files"
 
 # Docker compose commands
 .PHONY: up down restart logs build clean
-up:
+up: go-tidy
 	docker compose up -d
 
 down:
@@ -45,7 +46,7 @@ restart:
 logs:
 	docker compose logs -f
 
-build:
+build: go-tidy
 	docker compose build
 
 clean:
@@ -63,8 +64,8 @@ frontend-test:
 	cd frontend && npm test
 
 # Backend specific commands
-.PHONY: backend backend-install backend-test
-backend:
+.PHONY: backend backend-install backend-test backend-tidy
+backend: go-tidy
 	docker compose up -d backend
 
 backend-install:
@@ -72,6 +73,12 @@ backend-install:
 
 backend-test:
 	cd backend && npm test
+
+# Go module management
+.PHONY: go-tidy
+go-tidy:
+	@echo -e "${GREEN}Updating go.mod and go.sum files...${NC}"
+	cd backend && go mod tidy
 
 # Install all dependencies
 .PHONY: install
