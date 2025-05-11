@@ -13,6 +13,14 @@ const importedComponent = ref(null);
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
 /**
+ * Gets the current page title based on the route name
+ * @return {String}
+ */
+const getPageTitle = () => {
+  return route.name ? capitalize(route.name) : 'Page';
+};
+
+/**
  * A map for loading components dynamically.
  * Webpack requires explicit paths to avoid "Cannot find module" errors.
  */
@@ -58,7 +66,8 @@ watch(
 
 <template>
   <div class="default-view">
-    <section class="coming-soon-section">
+    <component v-if="importedComponent" :is="importedComponent" />
+    <section v-else class="coming-soon-section">
       <div class="container">
         <h1>{{ getPageTitle() }}</h1>
         <p class="subtitle">We're building something amazing for you.</p>
