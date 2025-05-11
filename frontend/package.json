@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "npm run lint -- --fix && vue-cli-service serve --watch --mode dev",
+    "dev": "vue-cli-service serve --watch --mode dev",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
@@ -17,6 +17,7 @@
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
     "core-js": "^3.8.3",
+    "eslint-auto-fix": "^1.0.4",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
@@ -36,7 +37,7 @@
     "cypress": "^9.7.0",
     "eslint": "^8.57.1",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-vue": "^9.29.0",
+    "eslint-plugin-vue": "^9.33.0",
     "jest": "^27.0.5",
     "postcss": "^8.4.28",
     "sass": "^1.32.7",
