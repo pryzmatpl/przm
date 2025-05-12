@@ -127,14 +127,6 @@ const defaultMessage = $t("Our approach offers precision, agility, and insight, 
           </div>
         </div>
       </div>
-
-<!--      &lt;!&ndash; Scroll indicator &ndash;&gt;
-      <div class="scroll-indicator">
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
-        <div class="scroll-text">Scroll to explore</div>
-      </div>-->
     </section>
 
     <!-- Value Proposition Section -->

@@ -35,7 +35,38 @@
         </div>
         
         <div class="hero-visual">
-          <img src="@/assets/krasnal.jpg" alt="Advanced Analytics Dashboard" class="hero-image w-full rounded-xl" />
+          <div class="carousel">
+            <div class="carousel-inner">
+              <div 
+                v-for="(slide, index) in carouselSlides" 
+                :key="index" 
+                :class="['carousel-slide', { active: currentSlide === index }]"
+                @click="handleSlideClick(slide)"
+              >
+                <img :src="slide.image" :alt="slide.alt" class="hero-image w-full rounded-xl" />
+                <div class="slide-overlay">
+                  <span class="slide-title">{{ slide.title }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-navigation">
+              <button class="carousel-nav-btn prev" @click="prevSlide" aria-label="Previous slide">
+                <span class="nav-arrow">‹</span>
+              </button>
+              <div class="carousel-indicators">
+                <button 
+                  v-for="(_, index) in carouselSlides" 
+                  :key="index"
+                  :class="['indicator', { active: currentSlide === index }]"
+                  @click="goToSlide(index)"
+                  :aria-label="`Go to slide ${index + 1}`"
+                ></button>
+              </div>
+              <button class="carousel-nav-btn next" @click="nextSlide" aria-label="Next slide">
+                <span class="nav-arrow">›</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -160,8 +191,42 @@ export default {
       loading: false,
       submitSuccess: false,
       submitError: '',
-      defenseFeatureEnabled: false
+      defenseFeatureEnabled: false,
+      currentSlide: 0,
+      carouselSlides: [
+        {
+          image: require('@/assets/krasnal.jpg'),
+          alt: 'Advanced Analytics Dashboard',
+          title: 'Advanced Analytics',
+          link: '/analytics'
+        },
+        {
+          image: require('@/assets/images/image2.jpg'),
+          alt: 'Budget Intelligence',
+          title: 'Budget Intelligence',
+          link: '/budget'
+        },
+        {
+          image: require('@/assets/images/image3.jpg'),
+          alt: 'Solutions Graph',
+          title: 'Solutions Graph',
+          link: '/solutions'
+        },
+        {
+          image: require('@/assets/sciencer.png'),
+          alt: 'Research Optimization',
+          title: 'Research Optimization',
+          link: '/research'
+        }
+      ]
     }
+  },
+  mounted() {
+    // Auto-advance slides
+    this.startCarouselTimer();
+  },
+  beforeUnmount() {
+    this.stopCarouselTimer();
   },
   methods: {
     async submitDemoRequest() {
@@ -203,6 +268,36 @@ export default {
     showFinancialDemo() {
       // Implement the function to show financial demo
       this.$router.push('/financial-demo');
+    },
+    // Carousel methods
+    startCarouselTimer() {
+      this.carouselTimer = setInterval(() => {
+        this.nextSlide();
+      }, 5000); // Change slide every 5 seconds
+    },
+    stopCarouselTimer() {
+      clearInterval(this.carouselTimer);
+    },
+    resetCarouselTimer() {
+      this.stopCarouselTimer();
+      this.startCarouselTimer();
+    },
+    nextSlide() {
+      this.currentSlide = (this.currentSlide + 1) % this.carouselSlides.length;
+      this.resetCarouselTimer();
+    },
+    prevSlide() {
+      this.currentSlide = (this.currentSlide - 1 + this.carouselSlides.length) % this.carouselSlides.length;
+      this.resetCarouselTimer();
+    },
+    goToSlide(index) {
+      this.currentSlide = index;
+      this.resetCarouselTimer();
+    },
+    handleSlideClick(slide) {
+      if (slide.link) {
+        this.$router.push(slide.link);
+      }
     }
   },
   metaInfo: {
@@ -319,10 +414,127 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Carousel Styles */
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
   
-  .hero-image {
-    max-width: 100%;
-    animation: float 6s ease-in-out infinite;
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  &:hover .slide-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.slide-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.carousel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+.carousel-nav-btn {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .nav-arrow {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  
+  &.active {
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
   }
 }
 
