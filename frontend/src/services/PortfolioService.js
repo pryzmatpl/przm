@@ -75,6 +75,17 @@ const portfolioData = [
     tags: ['Automation', 'nginx', 'Reverse Proxy'],
     featured: false,
   },
+  {
+    id: 7,
+    title: 'Software and hardware design for a 3D Scanner',
+    url: '',
+    description: 'Expanding the hardware base as well as programming a full device? We got your back',
+    longDescription: 'We have deployed our custom designed hardware and software to achieve a fully automated 3D scanner for dental purposes',
+    imagePath: require('@/assets/scanner.png'),
+    imageFallback: require('@/assets/scanner.png'),
+    tags: ['Hardware', 'Firmware'],
+    featured: false,
+  },
 ];
 
 /**
