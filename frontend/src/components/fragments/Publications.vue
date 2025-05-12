@@ -72,7 +72,8 @@ const papers = ref([
     link: "https://www.granthaalayahpublication.org/journals/granthaalayah/article/view/IJRG17_A06_396",
   },
   {
-    title: "PhD in ~200 parts on Quora (unfinished)",
+    title: "" +
+        "200 parts on Quantum",
     authors: "Piotr Słupski ",
     journal: "No journal",
     year: 2018,
