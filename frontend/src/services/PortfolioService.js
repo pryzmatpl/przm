@@ -119,6 +119,17 @@ const portfolioData = [
     tags: ['Hardware', 'Firmware'],
     featured: false,
   },
+  {
+    id: 11,
+    title: 'IOT Finder',
+    url: '',
+    description: 'Hardware design of a gadget for the forgetful',
+    longDescription: 'Utilizng a first-principles approach, we have designed a Bluetooth LE system to always find your stuff.',
+    imagePath: require('@/assets/ifind.jpg'),
+    imageFallback: require('@/assets/ifind.jpg'),
+    tags: ['Hardware', 'Firmware'],
+    featured: false,
+  },
 ];
 
 /**
