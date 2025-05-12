@@ -85,7 +85,7 @@ const papers = ref([
   <div class="max-w-4xl mx-auto p-6 text-white rounded-lg shadow-lg mt-5">
     <h2 class="text-3xl font-bold text-center mb-6">📜 {{$t("Papers")}}</h2>
     <ul class="space-y-6 mt-10">
-      <li v-for="(paper, index) in papers" :key="index" class="p-4 bg-gray-800 rounded-2xl shadow-md hover:bg-gray-700 transition">
+      <li v-for="(paper, index) in papers" :key="index" class="p-8 bg-gray-800 rounded-2xl shadow-md hover:bg-gray-700 transition">
         <h3 class="text-xl font-semibold">{{ paper.title }}</h3>
         <p class="text-gray-400"><strong>{{ $t("Authors:") }}</strong> {{ paper.authors }}</p>
         <p class="text-gray-400"><strong>{{ $t("Published in:") }}</strong> {{ paper.journal }} ({{ paper.year }})</p>

@@ -14,10 +14,10 @@ const $t = inject('$t');
 <template>
   <div class="page-container animate-fade-in">
     <!-- Hero Section -->
-    <section class="hero-section py-8 md:py-12">
-      <div class="container-xl mx-auto px-4">
-        <h1 class="headline-1 text-gradient text-center mb-4">
-          {{ $t('Get in touch') }}
+    <section class="hero-section py-8 md:py-12 ">
+      <div class="container-xl mx-auto px-4 ">
+        <h1 class="headline-1 text-gradient text-center mb-4 ">
+          <span class="text-white">{{ $t('Get in touch') }}</span>
         </h1>
         <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary">
           {{ $t('Looking for traditional contact?') }}

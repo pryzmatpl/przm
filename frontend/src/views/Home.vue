@@ -43,9 +43,9 @@
                 :class="['carousel-slide', { active: currentSlide === index }]"
                 @click="handleSlideClick(slide)"
               >
-                <img :src="slide.image" :alt="slide.alt" class="hero-image w-full rounded-xl" />
+                <img :src="slide.image" :alt="slide.alt" class="hero-image max-h-full w-full rounded-xl" />
                 <div class="slide-overlay">
-                  <span class="slide-title">{{ slide.title }}</span>
+                  <span class="ml-10 slide-title">{{ slide.title }}</span>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@
               <button class="carousel-nav-btn prev" @click="prevSlide" aria-label="Previous slide">
                 <span class="nav-arrow">‹</span>
               </button>
-              <div class="carousel-indicators">
+              <div class="carousel-indicators mt-2">
                 <button 
                   v-for="(_, index) in carouselSlides" 
                   :key="index"
@@ -196,26 +196,26 @@ export default {
       carouselSlides: [
         {
           image: require('@/assets/krasnal.jpg'),
-          alt: 'Advanced Analytics Dashboard',
-          title: 'Advanced Analytics',
-          link: '/analytics'
+          alt: 'Research',
+          title: 'Research',
+          link: '/solutions'
         },
         {
-          image: require('@/assets/images/image2.jpg'),
+          image: require('@/assets/solutionsgraph.jpg'),
           alt: 'Budget Intelligence',
           title: 'Budget Intelligence',
           link: '/budget'
         },
         {
-          image: require('@/assets/images/image3.jpg'),
+          image: require('@/assets/solutions_graph_svg.svg'),
           alt: 'Solutions Graph',
           title: 'Solutions Graph',
           link: '/solutions'
         },
         {
           image: require('@/assets/sciencer.png'),
-          alt: 'Research Optimization',
-          title: 'Research Optimization',
+          alt: 'Optimization',
+          title: 'Optimization',
           link: '/research'
         }
       ]

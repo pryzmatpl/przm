@@ -49,7 +49,7 @@ const solutions = [
     <section class="hero-section py-8 md:py-12">
       <div class="container-xl mx-auto px-4">
         <h1 class="headline-1 text-gradient text-center mb-4">
-          {{ $t('Solutions for modern needs') }}
+          <span class="text-white">{{ $t('Solutions for modern needs') }}</span>
         </h1>
         <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary">
           {{ $t('Tailored tools to optimize your business') }}

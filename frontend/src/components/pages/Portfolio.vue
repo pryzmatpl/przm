@@ -26,7 +26,7 @@ onMounted(() => {
     <section class="hero-section py-8 md:py-12">
       <div class="container-xl mx-auto px-4">
         <h1 class="headline-1 text-gradient text-center mb-4">
-          Our Digital Portfolio
+          <span class="text-white">Our Digital Portfolio</span>
         </h1>
         <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary">
           Explore our innovative digital products and solutions that push the boundaries of what's possible.
