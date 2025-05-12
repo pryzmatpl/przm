@@ -40,11 +40,6 @@ const solutions = [
     text: 'Feeling like you are overspending on a technical project? You are probably right, and you may be part of the problem. Objective feedback on technical projects.',
     link: 'service/diligence',
   },
-  {
-    title: 'Estate Appraisal',
-    text: "As *homage* to the roots of the company, we offer geodesy, legal advice and real estate appraisal in the Lower Silesian region.",
-    link: 'service/appraisal',
-  },
 ];
 </script>
 

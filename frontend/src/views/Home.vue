@@ -15,173 +15,132 @@
           </p>
           <div class="hero-actions">
             <router-link to="/solutions" class="btn btn-primary">Explore Solutions</router-link>
-            <router-link to="/demo" class="btn btn-outline">Request a Demo</router-link>
+            <router-link to="/contact" class="btn btn-outline">Request a Demo</router-link>
           </div>
           
           <div class="hero-metrics">
             <div class="metric-card">
-              <h3>10M+</h3>
-              <p>Opportunities Tracked</p>
+              <h3>30+</h3>
+              <p>Deep projects and research</p>
             </div>
             <div class="metric-card">
               <h3>98%</h3>
               <p>Client Satisfaction</p>
             </div>
             <div class="metric-card">
-              <h3>3x</h3>
-              <p>Efficiency Increase</p>
+              <h3>50%</h3>
+              <p>Minimal cost efficiency increase</p>
             </div>
           </div>
         </div>
         
         <div class="hero-visual">
-          <img src="@/assets/images/hero-visual.svg" alt="Advanced Analytics Dashboard" class="hero-image" />
+          <img src="@/assets/krasnal.jpg" alt="Advanced Analytics Dashboard" class="hero-image w-full rounded-xl" />
         </div>
       </div>
       
       <div class="hero-pattern"></div>
     </section>
     
-    <!-- Services Section -->
-    <section class="services-section section">
+    <!-- Benefits Section -->
+    <section class="benefits-section section">
       <div class="container">
         <div class="section-header">
-          <h2>Our Core Services</h2>
+          <h2>Our Core Benefits</h2>
           <p>Comprehensive solutions to enhance your technological capabilities</p>
         </div>
         
-        <div class="services-grid">
-          <div class="service-card card">
-            <div class="service-icon">
-              <i class="fas fa-chart-line"></i>
+        <div class="benefits-grid">
+          <div class="benefit-card card">
+            <div class="benefit-image rounded-xl">
+              <img src="@/assets/images/image2.jpg" alt="Budget Intelligence" />
             </div>
             <h3>Budget Intelligence</h3>
-            <p>Track financial data and optimize resource allocation with precision analytics.</p>
-            <router-link to="/services/budget-intelligence" class="service-link">Learn more</router-link>
+            <p>Track research projects and optimize resource allocation with precision analytics.</p>
           </div>
           
-          <div class="service-card card">
-            <div class="service-icon">
-              <i class="fas fa-project-diagram"></i>
+          <div class="benefit-card card">
+            <div class="benefit-image rounded-xl">
+              <img src="@/assets/images/image3.jpg" alt="Orion Network Graph" />
             </div>
-            <h3>Orion™ Network Graph</h3>
-            <p>Visualize complex relationships and identify key opportunities with our proprietary tool.</p>
-            <router-link to="/services/orion-network" class="service-link">Learn more</router-link>
+            <h3>Solutions Graph</h3>
+            <p>Visualize complex relationships and identify key opportunities with our proprietary research tool.</p>
           </div>
           
-          <div class="service-card card">
-            <div class="service-icon">
-              <i class="fas fa-building"></i>
+          <div class="benefit-card card">
+            <div class="benefit-image  rounded-xl">
+              <img src="@/assets/images/image4.jpg" alt="Organization Intelligence" />
             </div>
             <h3>Organization Intelligence</h3>
             <p>Gain insights into organizational structures and optimize internal workflows.</p>
-            <router-link to="/services/org-intelligence" class="service-link">Learn more</router-link>
-          </div>
-          
-          <div class="service-card card">
-            <div class="service-icon">
-              <i class="fas fa-brain"></i>
-            </div>
-            <h3>AI-Powered Assistant</h3>
-            <p>Leverage cutting-edge AI to automate processes and enhance decision-making.</p>
-            <router-link to="/services/ai-assistant" class="service-link">Learn more</router-link>
           </div>
         </div>
       </div>
     </section>
     
-    <!-- Case Studies Section -->
-    <section class="case-studies-section section">
+    <!-- Features Section -->
+    <section class="features-section section mt-20">
       <div class="container">
         <div class="section-header">
-          <h2>Success Stories</h2>
-          <p>Real results from our technological solutions</p>
+          <h2>Key Deliverables</h2>
+          <p>Powerful capabilities that set our solutions apart</p>
         </div>
         
-        <div class="case-studies-slider">
-          <div class="case-study-card card">
-            <div class="case-study-content">
-              <h3>Defense Innovation Acceleration</h3>
-              <p class="case-study-company">Major Defense Contractor</p>
-              <p class="case-study-result">Reduced contract analysis time by 75% and increased success rate by 40%</p>
-              <p>Using our Orion™ Network Graph and Budget Intelligence services, we helped streamline the procurement process and identify key opportunities.</p>
-              <router-link to="/case-studies/defense-innovation" class="btn btn-outline">Read Full Case Study</router-link>
-            </div>
-            <div class="case-study-visual">
-              <img src="@/assets/images/case-study-1.jpg" alt="Defense Innovation Visualization" />
+        <div class="features-container">
+          <div class="feature-block">
+            <h3>Tailored Research Optimization</h3>
+            <p>Our approach processes complex data sets to provide actionable insights for strategic decision-making.</p>
+            <div class="feature-visualization">
+              <img src="@/assets/sciencer.png" alt="Analytics Chart" class="rounded-xl" />
             </div>
           </div>
           
-          <!-- More case studies here... -->
+          <div class="feature-block">
+            <h3>Research Data Processing</h3>
+            <p>Stay ahead with real-time updates and data processing capabilities for immediate decision support.</p>
+            <div class="feature-visualization">
+              <img src="@/assets/crunch.png" alt="Data Processing Graph" class="rounded-xl"/>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    
-    <!-- Testimonials Section -->
-    <section class="testimonials-section section">
+
+    <!-- Final CTA Section -->
+    <section class="final-section section mt-10 mb-20">
       <div class="container">
         <div class="section-header">
-          <h2>What Our Clients Say</h2>
-          <p>Trusted by leaders in tech and innovation</p>
+          <h2>Trusted to Transform Capabilities</h2>
         </div>
         
-        <div class="testimonials-grid">
-          <div class="testimonial-card card">
-            <div class="testimonial-quote">"Pryzm.at's solutions have transformed how we approach market intelligence. The efficiency gains have been remarkable."</div>
-            <div class="testimonial-author">
-              <img src="@/assets/images/testimonial-1.jpg" alt="Sarah Johnson" class="testimonial-avatar" />
-              <div class="testimonial-info">
-                <h4>Sarah Johnson</h4>
-                <p>CTO, InnovaTech Solutions</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card card">
-            <div class="testimonial-quote">"The Orion Network Graph provided insights we couldn't have discovered otherwise. It's become an essential tool for our strategy team."</div>
-            <div class="testimonial-author">
-              <img src="@/assets/images/testimonial-2.jpg" alt="James Rodriguez" class="testimonial-avatar" />
-              <div class="testimonial-info">
-                <h4>James Rodriguez</h4>
-                <p>Director of Operations, DefenseTech Inc.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card card">
-            <div class="testimonial-quote">"Pryzm.at doesn't just provide data - they provide actionable intelligence that has measurably improved our decision-making process."</div>
-            <div class="testimonial-author">
-              <img src="@/assets/images/testimonial-3.jpg" alt="Michelle Chang" class="testimonial-avatar" />
-              <div class="testimonial-info">
-                <h4>Michelle Chang</h4>
-                <p>Head of Procurement, Global Health Systems</p>
-              </div>
-            </div>
-          </div>
+        <div class="cta-button-container">
+          <router-link to="/demo" class="btn btn-primary">Request a Demo</router-link>
         </div>
-      </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section section">
-      <div class="container">
-        <div class="cta-container card">
-          <h2>Ready to Transform Your Technological Capabilities?</h2>
-          <p>Schedule a personalized demo to see how our solutions can address your specific challenges.</p>
-          <form @submit.prevent="submitDemoRequest" class="cta-form">
-            <div class="form-group">
-              <input type="email" v-model="email" placeholder="Your Email" required />
+        
+        <div class="feature-cards-grid">
+          <div class="feature-card card">
+            <div class="feature-card-image mb-5">
+              <img src="@/assets/images/image8.jpg" alt="Defense Solutions" class="rounded-xl"/>
             </div>
-            <div class="form-group">
-              <input type="text" v-model="company" placeholder="Company Name" required />
+            <h3>Defense</h3>
+            <p>Specialized simulations and design solutions for defense sector innovation and procurement optimization.</p>
+          </div>
+          
+          <div class="feature-card card">
+            <div class="feature-card-image mb-5">
+              <img src="@/assets/images/image9.jpg" alt="Healthcare Integration" />
             </div>
-            <div class="form-group">
-              <input type="text" v-model="name" placeholder="Your Name" required />
+            <h3>Renewable Energy</h3>
+            <p>Seamless integration and process design for the latest technology in printed and next-gen renewable energy sources.</p>
+          </div>
+          
+          <div class="feature-card card">
+            <div class="feature-card-image mb-5">
+              <img src="@/assets/images/case-study-1.jpg" alt="Financial Analytics" class="rounded-xl"/>
             </div>
-            <button type="submit" class="btn btn-primary" :disabled="loading">Request Demo</button>
-          </form>
-          <p v-if="submitError" class="error-message">{{ submitError }}</p>
-          <p v-if="submitSuccess" class="success-message">Demo request submitted successfully!</p>
+            <h3>Digital Transformation</h3>
+            <p>Advanced tools for financial data analysis, research data analisys and budget optimization.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -200,7 +159,8 @@ export default {
       name: '',
       loading: false,
       submitSuccess: false,
-      submitError: ''
+      submitError: '',
+      defenseFeatureEnabled: false
     }
   },
   methods: {
@@ -239,6 +199,10 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+    showFinancialDemo() {
+      // Implement the function to show financial demo
+      this.$router.push('/financial-demo');
     }
   },
   metaInfo: {
@@ -404,219 +368,184 @@ export default {
   }
 }
 
-.services-grid {
+.benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.service-card {
-  text-align: center;
-  
-  .service-icon {
-    background: $dark-gradient;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    color: $primary;
-    font-size: 2rem;
-    border: 2px solid rgba($primary, 0.3);
-  }
-  
-  h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-  
-  p {
-    color: $text-secondary;
-    margin-bottom: 1.5rem;
-  }
-  
-  .service-link {
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    
-    &::after {
-      content: '→';
-      margin-left: 0.5rem;
-      transition: transform $transition-fast ease;
-    }
-    
-    &:hover::after {
-      transform: translateX(5px);
-    }
-  }
-}
-
-.case-study-card {
+.benefit-card {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.benefit-image {
+  margin-bottom: 1.5rem;
+  width: 100%;
   overflow: hidden;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
+  border-radius: 0.5rem;
 }
 
-.case-study-content {
-  flex: 1;
-  padding: 2rem;
-  
-  h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  .case-study-company {
-    color: $primary;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  
-  .case-study-result {
-    font-weight: 700;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-  }
-  
-  p {
-    color: $text-secondary;
-    margin-bottom: 1.5rem;
-  }
+.benefit-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-.case-study-visual {
-  flex: 1;
-  max-height: 400px;
-  overflow: hidden;
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  @media (max-width: 768px) {
-    max-height: 250px;
-  }
-}
-
-.testimonials-grid {
+.features-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
-.testimonial-card {
-  .testimonial-quote {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    font-style: italic;
-    position: relative;
-    padding-left: 1.5rem;
-    
-    &::before {
-      content: '"';
-      position: absolute;
-      left: 0;
-      top: -5px;
-      font-size: 3rem;
-      color: rgba($primary, 0.2);
-      font-family: Georgia, serif;
-    }
-  }
+.feature-block {
+  padding: 2rem;
+  background-color: var(--color-background-alt);
+  border-radius: 0.5rem;
 }
 
-.testimonial-author {
+.feature-visualization {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.feature-visualization img {
+  width: 100%;
+  height: auto;
+}
+
+.trust-section .section-header.centered {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.world-map-container {
+  width: 100%;
+  text-align: center;
+}
+
+.world-map {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+}
+
+.final-section .cta-button-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.feature-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.feature-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.feature-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-toggle, .feature-qr-code, .interactive-button {
+  margin-top: 1.5rem;
   display: flex;
   align-items: center;
-  
-  .testimonial-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 1rem;
-    object-fit: cover;
-  }
-  
-  .testimonial-info {
-    h4 {
-      margin-bottom: 0.25rem;
-    }
-    
-    p {
-      color: $text-secondary;
-      font-size: 0.9rem;
-    }
-  }
-}
-
-.cta-section {
-  background: $dark-gradient;
-}
-
-.cta-container {
-  text-align: center;
-  padding: 4rem;
-  max-width: 800px;
-  margin: 0 auto;
-  background: $dark-gradient;
-  border: 1px solid rgba($primary, 0.2);
-  
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  p {
-    color: $text-secondary;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-  }
-}
-
-.cta-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
-  
-  .form-group {
-    flex: 1;
-    min-width: 240px;
-    
-    input {
-      width: 100%;
-      padding: 1rem;
-      border-radius: 4px;
-      border: 1px solid rgba($text-secondary, 0.3);
-      background-color: rgba($background-light, 0.8);
-      color: $text-primary;
-      font-size: 1rem;
-      
-      &:focus {
-        outline: none;
-        border-color: $primary;
-      }
-    }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 0.5rem;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.feature-qr-code img {
+  width: 80px;
+  height: 80px;
+  margin-right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .benefits-grid,
+  .features-container,
+  .feature-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  button {
-    min-width: 150px;
-  }
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    
-    button {
-      width: 100%;
-    }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid,
+  .features-container,
+  .feature-cards-grid {
+    grid-template-columns: 1fr;
   }
 }
 

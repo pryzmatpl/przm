@@ -91,6 +91,16 @@ const routes = [
     }
   },
   {
+    path: '/portfolio',
+    name: 'portfolio',
+    component: DefaultView,
+    meta: {
+      title: 'Our showcase',
+      description: 'Delivered projects and engineering history',
+      keywords: 'tech demo, service demonstration, product trial, portfolio'
+    }
+  },
+  {
     path: '/demo',
     name: 'demo',
     component: DefaultView,

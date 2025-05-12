@@ -28,8 +28,8 @@ const resources = [
   {name: 'FAQ', link: '/faq'},
 ];
 
-const email = 'pryzmat@pryzmat.pl';
-const phone = '+48 12 345 67 89';
+const email = 'piotr.slupski@pryzmat.pl';
+const phone = '+48 883 961 639';
 
 // Newsletter subscription
 const newsletterEmail = ref('');
@@ -169,17 +169,17 @@ const submitNewsletter = () => {
             <h3 class="footer-heading">
               {{$t("Connect With Us")}}
             </h3>
-            <SocialColumn class="justify-start" />
+            <SocialColumn class="justify" />
 
             <!-- Certifications or badges -->
-            <div class="mt-8">
+<!--            <div class="mt-8">
               <h4 class="text-sm text-gray-400 mb-3">Certified Partner</h4>
               <div class="flex space-x-4">
                 <div class="certification-badge">AWS</div>
                 <div class="certification-badge">Microsoft</div>
                 <div class="certification-badge">ISO 9001</div>
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>

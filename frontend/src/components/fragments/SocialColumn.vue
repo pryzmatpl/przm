@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center mx-auto md:float-right">
+  <div class="text-center mx-auto md:float-left">
     <h3 class="text-white font-extrabold text-lg mb-6 gradient-text">
       {{ $t("Socials") }}
     </h3>
