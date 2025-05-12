@@ -39,7 +39,8 @@ onMounted(() => {
 <template>
   <div class="portfolio-card bg-glass rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:shadow-blue-900/20">
     <!-- Content -->
-    <div class="p-6">
+    <div class="p-6 h-auto">
+      <img :src="item.imageFallback" class="rounded-xl mb-10  w-fit">
       <div class="flex justify-between items-start mb-3">
         <h3 class="text-2xl font-bold">{{ item.title }}</h3>
         <div v-if="item.featured" class="px-3 py-1 text-xs font-medium bg-secondary/80 text-white rounded-full">
@@ -47,11 +48,14 @@ onMounted(() => {
         </div>
       </div>
 
+      <div class="h-64">
       <p class="text-gray-300 text-lg mb-3">{{ item.description }}</p>
       <p class="text-gray-400 mb-6">{{ item.longDescription }}</p>
+      </div>
 
       <!-- Action button -->
-      <div class="flex justify-between items-center">
+      <div class="bottom-0 mb-0">
+      <div class="flex justify-between items-center bottom-0">
         <a
           :href="item.url"
           target="_blank"
@@ -74,6 +78,7 @@ onMounted(() => {
             External Link
           </span>
         </div>
+      </div>
       </div>
     </div>
   </div>
