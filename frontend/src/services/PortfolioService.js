@@ -152,6 +152,28 @@ const portfolioData = [
     tags: ['Vibration','Blindness'],
     featured: false,
   },
+  {
+    id: 14,
+    title: 'Refair.me - Transformed into referral-hub OSS project',
+    url: 'https://github.com/pryzmatpl/referral-hub',
+    description: 'Internal Project',
+    longDescription: 'Utilizng a first-principles approach, we have designed an NLP-based learning model to automatically classify jobs and candidates for easy recruitment',
+    imagePath: require('@/assets/refair.jpg'),
+    imageFallback: require('@/assets/refair.jpg'),
+    tags: ['Recruiting','ATS'],
+    featured: false,
+  },
+  {
+    id: 15,
+    title: 'Plasmablade - a fun game with plasma swords',
+    url: 'http://plasmablade.pryzmat.pl/',
+    description: 'Internal Project',
+    longDescription: 'The first vibe coded, 3D game with initial implementation of mechanics, blade physics and gameplay.',
+    imagePath: require('@/assets/plasma.png'),
+    imageFallback: require('@/assets/plasma.png'),
+    tags: ['Recruiting','ATS'],
+    featured: false,
+  },
 ];
 
 /**
