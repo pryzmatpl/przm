@@ -139,7 +139,7 @@ const closeNavOnRouteChange = () => {
       class="mobile-nav rounded-b-xl border border-white/10 bg-glass animate-fade-in overflow-hidden"
     >
       <div class="mobile-nav-content px-4 py-6 h-full overflow-y-auto">
-        <div class="space-y-3" v-for="item in navItems" :key="item.text">
+        <div class="space-y-3 m-5" v-for="item in navItems" :key="item.text">
           <NavButton
             :link="item.link"
             :text="item.text"
