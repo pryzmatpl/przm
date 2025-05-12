@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"pryzm.at/backend/middleware"
 	"syscall"
 
 	"github.com/gin-contrib/cors"
@@ -55,10 +56,12 @@ func main() {
 	// Register API handlers
 	api.RegisterHandlers(router)
 
+	router.Use(middleware.CORSMiddleware())
+
 	// Handle graceful shutdown
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
-	
+
 	go func() {
 		<-quit
 		log.Println("Shutting down server...")
@@ -71,4 +74,4 @@ func main() {
 	if err := router.Run(":" + port); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}
-} 
+}

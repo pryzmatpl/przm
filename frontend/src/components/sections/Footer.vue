@@ -2,7 +2,7 @@
 import {inject, ref} from 'vue';
 import AppLogo from "@c/asset/AppLogo.vue";
 import SocialColumn from "@c/fragments/SocialColumn.vue";
-import axios from "axios";
+import {api} from "@/api.js"
 
 // Define component name
 defineOptions({
@@ -38,6 +38,7 @@ const subscribeSuccess = ref(false);
 const subscribeError = ref(false);
 const errorMessage = ref('');
 
+
 const submitNewsletter = () => {
   // Validate email format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -47,7 +48,7 @@ const submitNewsletter = () => {
     return;
   }
 
-  axios.post('/api/register-newsletter', {
+  api.post('/api/register-newsletter', {
     email: newsletterEmail.value
   }).then(()=> {
 

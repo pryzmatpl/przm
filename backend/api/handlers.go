@@ -22,7 +22,9 @@ func RegisterHandlers(router *gin.Engine) {
 
 		// Example of a GET endpoint
 		api.GET("/services", GetServices)
+
 	}
+
 }
 
 // HandleDemoRequest processes demo request submissions
@@ -88,7 +90,7 @@ func HandleNewsletterSignup(c *gin.Context) {
 
 	var existingSubscription models.NewsletterSignup
 	err := collection.FindOne(ctx, bson.M{"email": subscription.Email}).Decode(&existingSubscription)
-	
+
 	if err == nil {
 		// Email already exists, return success without duplicating
 		c.JSON(http.StatusOK, gin.H{
