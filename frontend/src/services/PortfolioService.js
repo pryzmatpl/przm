@@ -110,7 +110,7 @@ const portfolioData = [
   },
   {
     id: 10,
-    title: 'Protable Laser Power Supply Units',
+    title: 'Portable Laser Power Supply Units',
     url: '',
     description: 'Needed to create a product for laser-based hairloss treatments.',
     longDescription: 'In order to power tens of red lasers to aid hairloss, we have designed an in-house PSU giving stability, chargeability and robustness',
