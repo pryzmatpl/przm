@@ -46,7 +46,7 @@ const solutions = [
         <h1 class="headline-1 text-gradient text-center mb-4 mt-10">
           <span class="text-white">{{ $t('Solutions for modern needs') }}</span>
         </h1>
-        <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary">
+        <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary text-xl">
           {{ $t('Tailored tools to optimize your business') }}
         </p>
       </div>
@@ -56,7 +56,7 @@ const solutions = [
     <section class="content-section py-6">
       <div class="container-lg mx-auto px-4">
         <div class="max-w-5xl mx-auto text-color-text-secondary">
-          <div class="bg-glass p-5 mb-8 content-fade-in">
+          <div class="bg-glass p-5 mb-8 content-fade-in text-2xl">
             <p class="body-1">{{ $t("Explore our range of solutions designed to address your technical challenges and optimize your operations. Each solution is built on our expertise and commitment to quality.") }}</p>
           </div>
         </div>

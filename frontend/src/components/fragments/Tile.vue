@@ -32,7 +32,7 @@ const resolvedImage = computed(() =>
     <a v-if="link !== ''" :href="link" class="portfolio-tile bg-glass overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] block text-decoration-none">
       <!-- Header Image with Crystal -->
       <div class="tile-header aspect-video relative overflow-hidden h-80">
-        <div class="absolute inset-0 flex items-center justify-center opacity-20">
+        <div class="absolute inset-0 flex items-center justify-center opacity-70">
           <div class="sm:max-w-[450px] md:max-w-full" >
             <picture>
               <img
@@ -127,7 +127,7 @@ const resolvedImage = computed(() =>
 }
 
 .portfolio-tile:hover::before {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .tile-header {
@@ -187,7 +187,7 @@ const resolvedImage = computed(() =>
   width: 150px;
   height: 150px;
   background: radial-gradient(circle, rgba(0, 102, 255, 0.3) 0%, transparent 70%);
-  opacity: 0.3;
+  opacity: 0.7;
   transition: opacity var(--transition-normal, 0.3s ease);
   z-index: 0;
   border-radius: 100%;
@@ -195,7 +195,7 @@ const resolvedImage = computed(() =>
 }
 
 .portfolio-tile:hover .tile-glow {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .portfolio-tile:hover .crystal-icon {

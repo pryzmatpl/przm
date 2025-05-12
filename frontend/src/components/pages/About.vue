@@ -55,7 +55,7 @@ const contentLeftSections = {
         <h1 class="headline-1 text-gradient text-center mb-4 mt-10">
           <span class="text-white">{{ $t('Using prisms since 1991') }}</span>
         </h1>
-        <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary">
+        <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary text-xl">
           {{ $t('Our Services') }}
         </p>
       </div>

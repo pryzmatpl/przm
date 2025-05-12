@@ -19,7 +19,7 @@ const $t = inject('$t');
         <h1 class="headline-1 text-gradient text-center mb-4 mt-10">
           <span class="text-white">{{ $t('Get in touch') }}</span>
         </h1>
-        <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary">
+        <p class="body-1 text-center max-w-3xl mx-auto text-color-text-secondary text-xl">
           {{ $t('Looking for traditional contact?') }}
         </p>
       </div>
