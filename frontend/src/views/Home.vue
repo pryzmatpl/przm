@@ -77,8 +77,8 @@
     <section class="benefits-section section">
       <div class="container">
         <div class="section-header">
-          <h2>Our Core Benefits</h2>
-          <p>Comprehensive solutions to enhance your technological capabilities</p>
+          <h2>Core Benefits</h2>
+          <p>Comprehensive solutions to enhance your technological capabilities and ease building</p>
         </div>
         
         <div class="benefits-grid">
@@ -87,7 +87,7 @@
               <img src="@/assets/images/image2.jpg" alt="Budget Intelligence" />
             </div>
             <h3>Budget Intelligence</h3>
-            <p>Track research projects and optimize resource allocation with precision analytics.</p>
+            <p>Track projects and optimize resource allocation with precision analytics.</p>
           </div>
           
           <div class="benefit-card card">
@@ -119,7 +119,7 @@
         
         <div class="features-container">
           <div class="feature-block">
-            <h3>Tailored Research Optimization</h3>
+            <h3 class="mb-2">Tailored Research Optimization</h3>
             <p>Our approach processes complex data sets to provide actionable insights for strategic decision-making.</p>
             <div class="feature-visualization">
               <img src="@/assets/sciencer.png" alt="Analytics Chart" class="rounded-xl" />
@@ -127,7 +127,7 @@
           </div>
           
           <div class="feature-block">
-            <h3>Research Data Processing</h3>
+            <h3 class="mb-2">Research Data Processing</h3>
             <p>Stay ahead with real-time updates and data processing capabilities for immediate decision support.</p>
             <div class="feature-visualization">
               <img src="@/assets/crunch.png" alt="Data Processing Graph" class="rounded-xl"/>
@@ -141,7 +141,7 @@
     <section class="final-section section mt-10 mb-20">
       <div class="container">
         <div class="section-header">
-          <h2>Trusted to Transform Capabilities</h2>
+          <h2>On to transform capabilities</h2>
         </div>
         
         <div class="cta-button-container">
@@ -170,7 +170,7 @@
               <img src="@/assets/images/case-study-1.jpg" alt="Financial Analytics" class="rounded-xl"/>
             </div>
             <h3>Digital Transformation</h3>
-            <p>Advanced tools for financial data analysis, research data analisys and budget optimization.</p>
+            <p>Tools for data analysis, research data analisys and budget optimization. Agents and AI implementations.</p>
           </div>
         </div>
       </div>
