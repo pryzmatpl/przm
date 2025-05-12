@@ -1,5 +1,5 @@
 <script setup>
-import {defineProps, inject} from 'vue';
+import {computed, defineProps, inject} from 'vue';
 import PrizmCrystalOffering from '@c/asset/PrizmCrystalOffering.vue';
 import PillButton from "@c/buttons/PillButton.vue";
 
@@ -20,15 +20,30 @@ const content = {
   link: props.link,
   buttonText: props.title,
 };
-</script>
 
+const resolvedImage = computed(() =>
+{
+  const retStr = content.link.replace("/","-") + ".png";
+  return require(`@/assets/${retStr}`);
+});
+</script>
 <template>
   <div>
     <a v-if="link !== ''" :href="link" class="portfolio-tile bg-glass overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] block text-decoration-none">
       <!-- Header Image with Crystal -->
       <div class="tile-header aspect-video relative overflow-hidden h-80">
         <div class="absolute inset-0 flex items-center justify-center opacity-20">
-          <PrizmCrystalOffering class="w-24 h-24" />
+          <div class="sm:max-w-[450px] md:max-w-full">
+            <picture>
+              <img
+                  :src="resolvedImage"
+                  class="rounded-2xl shadow-md max-w-full"
+                  width="450"
+                  height="300"
+                  loading="lazy"
+              />
+            </picture>
+          </div>
         </div>
         <div class="absolute inset-0 tile-gradient"></div>
 
