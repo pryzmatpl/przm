@@ -33,13 +33,11 @@ const resolvedImage = computed(() =>
       <!-- Header Image with Crystal -->
       <div class="tile-header aspect-video relative overflow-hidden h-80">
         <div class="absolute inset-0 flex items-center justify-center opacity-20">
-          <div class="sm:max-w-[450px] md:max-w-full">
+          <div class="sm:max-w-[450px] md:max-w-full" >
             <picture>
               <img
                   :src="resolvedImage"
-                  class="rounded-2xl shadow-md max-w-full"
-                  width="450"
-                  height="300"
+                  class="rounded-2xl shadow-md  h-96 object-fill"
                   loading="lazy"
               />
             </picture>
