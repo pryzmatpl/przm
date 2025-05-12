@@ -86,6 +86,17 @@ const portfolioData = [
     tags: ['Hardware', 'Firmware'],
     featured: false,
   },
+  {
+    id: 8,
+    title: 'Technological process design - Haptic Systems',
+    url: 'https://www.agorize.com/de/challenges/play-your-airport-2-company/pages/saison-1',
+    description: 'Expanding the state of the art in energy harvesters',
+    longDescription: 'Being part of a startup, we have researched, developed and tested a novel Haptic Generation technology that is ready to be commercialized.',
+    imagePath: require('@/assets/Haptic.jpg'),
+    imageFallback: require('@/assets/Haptic.jpg'),
+    tags: ['Hardware', 'Firmware'],
+    featured: false,
+  },
 ];
 
 /**
