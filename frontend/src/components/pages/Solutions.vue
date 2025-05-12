@@ -31,16 +31,6 @@ const solutions = [
     link: 'service/3d',
   },
   {
-    title: 'Secure Backup',
-    text: 'Keep your business running smoothly with encrypted backups stored on-site.',
-    link: 'service/backup',
-  },
-  {
-    title: 'Mission Critical Computing',
-    text: 'FPGA and logic design, ASIC, SoC and bare metal software to run your mission critical solutions',
-    link: 'service/mission',
-  },
-  {
     title: 'Due Diligence',
     text: 'Feeling like you are overspending on a technical project? You are probably right, and you may be part of the problem. Objective feedback on technical projects.',
     link: 'service/diligence',
