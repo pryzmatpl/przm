@@ -115,7 +115,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: rgb(var(--color-text-primary));
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -133,7 +133,7 @@ onMounted(() => {
 }
 
 .light .theme-toggle-btn {
-  color: #1E293B;
+  color: rgb(var(--color-text-primary));
 }
 
 .light .theme-toggle-btn:hover {
@@ -147,11 +147,11 @@ onMounted(() => {
 }
 
 .sun-icon {
-  color: #FFD43B;
+  color: rgba(255, 212, 59, 1);
 }
 
 .moon-icon {
-  color: #A5B4FC;
+  color: rgba(165, 180, 252, 1);
 }
 
 .toggle-glow {

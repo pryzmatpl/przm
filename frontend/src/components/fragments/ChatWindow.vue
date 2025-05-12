@@ -151,21 +151,21 @@ onMounted(scrollToBottom);
   align-items: center;
   font-weight: 600;
   font-size: 1.1rem;
-  color: white;
+  color: rgb(var(--color-text-primary));
 }
 
 .chat-subtitle {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(var(--color-text-muted));
   margin-top: 4px;
 }
 
 .light .chat-title {
-  color: #131b2b;
+  color: rgb(var(--color-text-primary));
 }
 
 .light .chat-subtitle {
-  color: rgba(19, 27, 43, 0.6);
+  color: rgb(var(--color-text-muted));
 }
 
 .chat-messages {
@@ -187,20 +187,20 @@ onMounted(scrollToBottom);
 .user-message {
   align-self: flex-end;
   background-color: rgb(112, 0, 255, 0.8);
-  color: white;
+  color: rgb(var(--color-text-primary));
   border-bottom-right-radius: 4px;
 }
 
 .assistant-message {
   align-self: flex-start;
   background-color: rgba(38, 54, 86, 0.7);
-  color: white;
+  color: rgb(var(--color-text-primary));
   border-bottom-left-radius: 4px;
 }
 
 .light .assistant-message {
   background-color: rgba(240, 240, 245, 0.9);
-  color: #131b2b;
+  color: rgb(var(--color-text-primary));
 }
 
 .chat-input {
@@ -221,7 +221,7 @@ onMounted(scrollToBottom);
   padding: 10px 14px;
   border-radius: 24px;
   background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: rgb(var(--color-text-primary));
   resize: none;
   outline: none;
   margin-right: 8px;
@@ -230,7 +230,7 @@ onMounted(scrollToBottom);
 
 .light .chat-input textarea {
   background-color: rgba(19, 27, 43, 0.1);
-  color: #131b2b;
+  color: rgb(var(--color-text-primary));
 }
 
 .chat-input textarea::placeholder {
@@ -249,7 +249,7 @@ onMounted(scrollToBottom);
   height: 40px;
   border-radius: 50%;
   background-color: rgb(112, 0, 255);
-  color: white;
+  color: rgb(var(--color-text-primary));
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;

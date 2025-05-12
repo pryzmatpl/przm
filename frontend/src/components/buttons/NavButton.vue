@@ -44,7 +44,7 @@ defineComponent({
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(var(--color-text-primary));
   text-decoration: none;
   border-radius: 12px;
   background: linear-gradient(to right, rgba(0, 168, 255, 0.1), rgba(0, 120, 255, 0.1));
@@ -53,11 +53,21 @@ defineComponent({
   overflow: hidden;
 }
 
+.light .nav-button {
+  background: linear-gradient(to right, rgba(0, 168, 255, 0.05), rgba(0, 120, 255, 0.05));
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
 .nav-button:hover {
   background: linear-gradient(to right, rgba(0, 189, 255, 0.2), rgba(0, 150, 255, 0.2));
-  color: #ffffff;
+  color: rgb(var(--color-text-primary));
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.light .nav-button:hover {
+  background: linear-gradient(to right, rgba(0, 189, 255, 0.1), rgba(0, 150, 255, 0.1));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .nav-button:active {
@@ -77,6 +87,10 @@ defineComponent({
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.light .nav-button:before {
+  background: linear-gradient(120deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+}
+
 .nav-button:hover:before {
   transform: translateX(100%);
 }
@@ -84,7 +98,7 @@ defineComponent({
 /* Active state styling */
 .nav-button.active {
   background: linear-gradient(to right, rgba(0, 189, 255, 0.3), rgba(0, 150, 255, 0.3));
-  color: #ffffff;
+  color: rgb(var(--color-text-primary));
   font-weight: 600;
 }
 
@@ -98,6 +112,10 @@ defineComponent({
   background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(157, 77, 255, 0.8));
   border-radius: 2px;
   animation: pulseWidth 2s infinite;
+}
+
+.light .active-indicator {
+  background: linear-gradient(to right, rgba(0, 120, 255, 0.8), rgba(157, 77, 255, 0.8));
 }
 
 @keyframes pulseWidth {

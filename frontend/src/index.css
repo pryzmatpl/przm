@@ -128,21 +128,55 @@
         color: rgb(var(--color-secondary));
     }
     
+    /* Slate text colors with proper dark/light mode handling */
     .text-slate-900 {
         color: #0f172a;
+    }
+    
+    .light .text-slate-900 {
+        color: #0f172a; /* Keep dark color for headings in light mode for contrast */
     }
     
     .text-slate-600 {
         color: #475569;
     }
     
+    .light .text-slate-600 {
+        color: #475569; /* Keep for light mode */
+    }
+    
     .dark .text-slate-400 {
         color: #94a3b8;
     }
-
-    .light .text-gray-300 {
-        color: rgba(40, 40, 45, 0.8);
+    
+    .light .text-slate-400 {
+        color: #64748b; /* Darker for better contrast in light mode */
     }
+
+    /* Fix for light mode gray text */
+    .text-gray-300 {
+        color: #d1d5db; /* Light gray for dark mode */
+    }
+    
+    .light .text-gray-300 {
+        color: rgba(40, 40, 45, 0.8); /* Darker gray for light mode */
+    }
+
+    /* Fix for other common text classes */
+    .text-white {
+        color: rgba(255, 255, 255, 0.99);
+    }
+    
+    .light .text-white {
+        color: rgba(10, 10, 12, 0.95); /* Invert to near-black in light mode */
+    }
+    
+    /* Black text utility */
+    .text-black {
+        color: rgba(0, 0, 0, 0.95);
+    }
+    
+    /* We don't need to override black in light mode, as it should remain black */
     
     /* Background colors with opacity support */
     .bg-primary {

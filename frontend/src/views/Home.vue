@@ -470,8 +470,12 @@ export default {
   width: 100%;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  color: rgb(var(--color-text-primary));
   transition: background-color 0.3s ease;
+}
+
+.light .slide-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .slide-title {
@@ -493,7 +497,7 @@ export default {
 
 .carousel-nav-btn {
   background-color: rgba(255, 255, 255, 0.5);
-  color: #000;
+  color: rgb(var(--color-text-primary));
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -514,6 +518,14 @@ export default {
   }
 }
 
+.light .carousel-nav-btn {
+  background-color: rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
 .carousel-indicators {
   display: flex;
   gap: 0.5rem;
@@ -529,12 +541,24 @@ export default {
   transition: background-color 0.3s ease, transform 0.3s ease;
   
   &.active {
-    background-color: #fff;
+    background-color: rgb(var(--color-text-primary));
     transform: scale(1.2);
   }
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.light .indicator {
+  background-color: rgba(0, 0, 0, 0.2);
+  
+  &.active {
+    background-color: rgb(var(--color-secondary));
+  }
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
