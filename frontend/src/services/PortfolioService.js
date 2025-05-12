@@ -130,6 +130,28 @@ const portfolioData = [
     tags: ['Hardware', 'Firmware'],
     featured: false,
   },
+  {
+    id: 12,
+    title: 'P2P Certificate Authority',
+    url: 'https://github.com/pryzmatpl/fauthority',
+    description: 'Internal Project',
+    longDescription: 'Utilizng a first-principles approach, we have designed a P2P certificate authority with the idea of freeing up the world of security hassles',
+    imagePath: require('@/assets/fauth.jpg'),
+    imageFallback: require('@/assets/fauth.jpg'),
+    tags: ['Security','Certificates'],
+    featured: false,
+  },
+  {
+    id: 13,
+    title: 'Vibrosound - Vision Deficient Personal Aid',
+    url: '',
+    description: 'Internal Project',
+    longDescription: 'Utilizng a first-principles approach, we have designed a vibration-based distance sensor giving haptic feedback to the visually impaired',
+    imagePath: require('@/assets/vibro.jpg'),
+    imageFallback: require('@/assets/vibro.jpg'),
+    tags: ['Vibration','Blindness'],
+    featured: false,
+  },
 ];
 
 /**
