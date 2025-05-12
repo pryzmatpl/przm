@@ -4,7 +4,6 @@ import (
 	"log"
 	"os"
 	"os/signal"
-	"pryzm.at/backend/middleware"
 	"syscall"
 
 	"github.com/gin-contrib/cors"
@@ -41,9 +40,10 @@ func main() {
 
 	// Configure CORS
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"http://localhost:9010", "https://pryzm.at"}
+	config.AllowOrigins = []string{"*"}
+	config.AllowCredentials = true
 	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}
-	config.AllowHeaders = []string{"Origin", "Content-Type", "Authorization"}
+	config.AllowHeaders = []string{"Content-Type", "Content-Length", "Accept-Encoding", "X-CSRF-Token", "Authorization", "accept", "origin", "Cache-Control", "X-Requested-With"}
 	router.Use(cors.New(config))
 
 	// Register health check endpoint
@@ -55,8 +55,6 @@ func main() {
 
 	// Register API handlers
 	api.RegisterHandlers(router)
-
-	router.Use(middleware.CORSMiddleware())
 
 	// Handle graceful shutdown
 	quit := make(chan os.Signal, 1)

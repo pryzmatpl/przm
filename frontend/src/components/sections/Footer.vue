@@ -47,16 +47,17 @@ const submitNewsletter = () => {
     errorMessage.value = 'Please enter a valid email address';
     return;
   }
-
-  api.post('/api/register-newsletter', {
+  console.log("test")
+  api.post('api/register-newsletter', {
     email: newsletterEmail.value
-  }).then(()=> {
-
+  }).then((resp)=> {
+    console.log(resp);
     subscribeSuccess.value = true;
     subscribeError.value = false;
     newsletterEmail.value = '';
-  }).catch(()=>{
+  }).catch((e)=>{
     subscribeError.value = true;
+    console.log(e)
   });
 };
 </script>
@@ -76,7 +77,7 @@ const submitNewsletter = () => {
             </p>
           </div>
 
-          <form @submit.prevent="submitNewsletter" class="newsletter-form">
+          <form @submit.prevent="{}" class="newsletter-form">
             <div class="input-container">
               <input
                 type="email"
@@ -85,7 +86,7 @@ const submitNewsletter = () => {
                 class="newsletter-input"
                 :class="{error: subscribeError}"
               />
-              <button type="submit" class="newsletter-button">
+              <button class="newsletter-button" @click="submitNewsletter">
                 Subscribe
                 <span class="newsletter-button-arrow">→</span>
               </button>
