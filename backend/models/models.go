@@ -1,5 +1,11 @@
 package models
 
+import (
+	"time"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
+
 // DemoRequest represents a demo request submission
 type DemoRequest struct {
 	Email     string `json:"email" binding:"required,email"`
@@ -21,7 +27,10 @@ type ContactForm struct {
 
 // NewsletterSignup represents a newsletter subscription
 type NewsletterSignup struct {
-	Email string `json:"email" binding:"required,email"`
+	ID        primitive.ObjectID `json:"id,omitempty" bson:"_id,omitempty"`
+	Email     string             `json:"email" binding:"required,email" bson:"email"`
+	Timestamp time.Time          `json:"timestamp" bson:"timestamp"`
+	Active    bool               `json:"active" bson:"active"`
 }
 
 // Service represents a service offered by Pryzm

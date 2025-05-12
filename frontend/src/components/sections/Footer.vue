@@ -2,6 +2,7 @@
 import {inject, ref} from 'vue';
 import AppLogo from "@c/asset/AppLogo.vue";
 import SocialColumn from "@c/fragments/SocialColumn.vue";
+import axios from "axios";
 
 // Define component name
 defineOptions({
@@ -46,16 +47,16 @@ const submitNewsletter = () => {
     return;
   }
 
-  // Here you would typically send the email to your backend
-  // For now, we'll simulate a successful subscription
-  subscribeSuccess.value = true;
-  subscribeError.value = false;
-  newsletterEmail.value = '';
+  axios.post('/api/register-newsletter', {
+    email: newsletterEmail.value
+  }).then(()=> {
 
-  // Reset success message after 5 seconds
-  setTimeout(() => {
-    subscribeSuccess.value = false;
-  }, 5000);
+    subscribeSuccess.value = true;
+    subscribeError.value = false;
+    newsletterEmail.value = '';
+  }).catch(()=>{
+    subscribeError.value = true;
+  });
 };
 </script>
 

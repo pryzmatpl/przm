@@ -16,9 +16,21 @@ services:
       context: ./backend
     ports:
       - "9011:9011"
+    depends_on:
+      - mongodb
     environment:
       - GIN_MODE=release
       - PORT=9011
+      - MONGO_URI=mongodb://mongodb:27017/pryzm
+    
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27027:27017"
+    volumes:
+      - db_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=pryzm
 
 volumes:
   db_data: 

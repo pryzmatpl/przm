@@ -20,9 +20,11 @@ WORKDIR /app
 # Copy the binary from the builder stage
 COPY --from=builder /app/server .
 
-# Set environment variable
+# Set environment variables
 ENV GIN_MODE=release
 ENV PORT=9011
+# Default MongoDB URI for container networking
+ENV MONGO_URI=mongodb://mongodb:27017/pryzm
 
 # Expose the application port
 EXPOSE 9011

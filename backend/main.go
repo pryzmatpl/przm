@@ -3,11 +3,14 @@ package main
 import (
 	"log"
 	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"pryzm.at/backend/api"
+	"pryzm.at/backend/database"
 )
 
 func main() {
@@ -15,6 +18,10 @@ func main() {
 	if err := godotenv.Load(); err != nil && !os.IsNotExist(err) {
 		log.Println("Error loading .env file:", err)
 	}
+
+	// Initialize database connection
+	database.Initialize()
+	defer database.Close()
 
 	// Set default port or use environment variable
 	port := os.Getenv("PORT")
@@ -47,6 +54,17 @@ func main() {
 
 	// Register API handlers
 	api.RegisterHandlers(router)
+
+	// Handle graceful shutdown
+	quit := make(chan os.Signal, 1)
+	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
+	
+	go func() {
+		<-quit
+		log.Println("Shutting down server...")
+		database.Close()
+		os.Exit(0)
+	}()
 
 	// Start server
 	log.Printf("Server running on port %s", port)
