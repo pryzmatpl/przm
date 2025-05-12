@@ -39,6 +39,8 @@ defineComponent({
 
 .main-content {
   flex: 1;
+  position: relative;
+  z-index: 10;
 }
 
 .bg-grid-pattern {

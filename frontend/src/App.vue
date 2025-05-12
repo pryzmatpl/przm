@@ -45,6 +45,8 @@ body {
 
 .main-content {
   flex: 1;
+  position: relative;
+  z-index: 10;
 }
 
 a {

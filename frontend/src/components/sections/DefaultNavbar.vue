@@ -128,11 +128,15 @@ const closeNavOnRouteChange = () => {
         </div>
       </div>
     </div>
+  </nav>
 
-    <!-- Mobile Navigation with glass morphism -->
-    <div
-      v-show="isNavOpen"
-      class="mobile-nav lg:hidden fixed top-20 left-0 right-0 bottom-0 rounded-b-xl border border-white/10 bg-glass animate-fade-in overflow-hidden z-40"
+  <!-- Mobile Navigation with glass morphism - positioned outside the nav element to cover everything -->
+  <div
+    v-show="isNavOpen"
+    class="mobile-menu-overlay fixed inset-0 z-40 lg:hidden"
+  >
+    <div 
+      class="mobile-nav rounded-b-xl border border-white/10 bg-glass animate-fade-in overflow-hidden"
     >
       <div class="mobile-nav-content px-4 py-6 h-full overflow-y-auto">
         <div class="space-y-3" v-for="item in navItems" :key="item.text">
@@ -162,7 +166,7 @@ const closeNavOnRouteChange = () => {
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </template>
 
 
@@ -221,8 +225,24 @@ const closeNavOnRouteChange = () => {
 }
 
 /* Mobile navigation */
+.mobile-menu-overlay {
+  background-color: rgba(10, 10, 12, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
 .mobile-nav {
   transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 80px; /* Match the navbar height */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 10, 12, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  overflow: hidden;
+  height: calc(100vh - 80px);
 }
 
 .mobile-nav-content {
