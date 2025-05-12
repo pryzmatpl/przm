@@ -174,6 +174,17 @@ const portfolioData = [
     tags: ['Recruiting','ATS'],
     featured: false,
   },
+  {
+    id: 16,
+    title: 'PDFScan - a research tool to expand the knowledge horizon',
+    url: 'https://github.com/piotroxp/pdfscan',
+    description: 'Internal Project',
+    longDescription: 'Rust-based literature scanner with efficient keyword search. Stems from a PhD project.',
+    imagePath: require('@/assets/pdfscan.png'),
+    imageFallback: require('@/assets/pdfscan.png'),
+    tags: ['Recruiting','ATS'],
+    featured: false,
+  },
 ];
 
 /**
