@@ -11,6 +11,11 @@ const $t = inject('$t');
 
 const solutions = [
   {
+    title: 'Code Detailing',
+    text: 'Remove scratches, bruises and dents from your product\'s code with expert testing and rapid delivery',
+    link: 'service/detailing',
+  },
+  {
     title: 'Cloud Exit',
     text: 'Move your data on prem. Leave behind the sky-high costs and scale on your own terms.',
     link: 'service/cloudexit',
@@ -72,7 +77,7 @@ const solutions = [
     <section class="content-section py-6">
       <div class="container-xl mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 w-full h-full">
             <div v-for="(solution, index) in solutions" :key="index"
                 class="content-fade-in"
                 :style="{animationDelay: `${0.05 * (index + 1)}s`}">

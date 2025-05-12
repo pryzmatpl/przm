@@ -31,6 +31,28 @@ const portfolioData = [
     tags: ['Zodiac', 'Personalization', 'Identity'],
     featured: true,
   },
+  {
+    id: 3,
+    title: 'SMS 2FA Auth Deployment',
+    url: 'https://www.cnet.com/news/privacy/two-factor-authentication-what-you-need-to-know-faq/#inline-product-carousel-top-53bcf96891dd3',
+    description: 'Deployment at scale',
+    longDescription: 'We have implemented an extensible, scalable 2FA SMS used by thousands of customers',
+    imagePath: 'mythicalhero.webp',
+    imageFallback: '/img/mythicalhero.jpg',
+    tags: ['SMS', '2FA', 'Identity'],
+    featured: true,
+  },
+  {
+    id: 4,
+    title: 'Automation',
+    url: '',
+    description: 'Deployment at scale',
+    longDescription: 'Enjoy life as it should be. Hassle free. We have freed up significant resources, bringing a legacy code base up to standards and increasing the overall product quality.',
+    imagePath: 'mythicalhero.webp',
+    imageFallback: '/img/mythicalhero.jpg',
+    tags: ['Automation', 'Testing', 'AI', 'Vibe Coding'],
+    featured: true,
+  },
 ];
 
 /**

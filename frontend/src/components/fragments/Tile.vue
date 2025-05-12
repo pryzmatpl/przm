@@ -26,7 +26,7 @@ const content = {
   <div>
     <a v-if="link !== ''" :href="link" class="portfolio-tile bg-glass overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] block text-decoration-none">
       <!-- Header Image with Crystal -->
-      <div class="tile-header aspect-video relative overflow-hidden">
+      <div class="tile-header aspect-video relative overflow-hidden h-80">
         <div class="absolute inset-0 flex items-center justify-center opacity-20">
           <PrizmCrystalOffering class="w-24 h-24" />
         </div>
@@ -48,11 +48,11 @@ const content = {
       <!-- Content Area -->
       <div class="p-5">
         <p class="body-2 text-lg mb-4 tile-text">{{ $t(text) }}</p>
+      </div>
 
-        <!-- Action Button -->
-        <div class="btn-container">
-          <PillButton :content="content" class="tile-btn btn-cta"></PillButton>
-        </div>
+      <!-- Action Button -->
+      <div class="btn-container m-4">
+        <PillButton :content="content" class="tile-btn btn-cta"></PillButton>
       </div>
 
       <!-- Glow Effect -->
