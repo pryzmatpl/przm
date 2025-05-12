@@ -76,9 +76,9 @@
     <!-- Benefits Section -->
     <section class="benefits-section section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header pt-10">
           <h2>Core Benefits</h2>
-          <p>Comprehensive solutions to enhance your technological capabilities and ease building</p>
+          <p class="text-xl">Comprehensive solutions to enhance your technological capabilities and ease building</p>
         </div>
         
         <div class="benefits-grid">
@@ -87,7 +87,7 @@
               <img src="@/assets/images/image2.jpg" alt="Budget Intelligence" />
             </div>
             <h3>Budget Intelligence</h3>
-            <p>Track projects and optimize resource allocation with precision analytics.</p>
+            <p class="text-xl">Track projects and optimize resource allocation with precision analytics.</p>
           </div>
           
           <div class="benefit-card card">
@@ -95,7 +95,7 @@
               <img src="@/assets/images/image3.jpg" alt="Orion Network Graph" />
             </div>
             <h3>Solutions Graph</h3>
-            <p>Visualize complex relationships and identify key opportunities with our proprietary research tool.</p>
+            <p class="text-xl">Visualize complex relationships and identify key opportunities with our proprietary research tool.</p>
           </div>
           
           <div class="benefit-card card">
@@ -103,7 +103,7 @@
               <img src="@/assets/images/image4.jpg" alt="Organization Intelligence" />
             </div>
             <h3>Organization Intelligence</h3>
-            <p>Gain insights into organizational structures and optimize internal workflows.</p>
+            <p class="text-xl">Gain insights into organizational structures and optimize internal workflows.</p>
           </div>
         </div>
       </div>
@@ -114,13 +114,13 @@
       <div class="container">
         <div class="section-header">
           <h2>Key Deliverables</h2>
-          <p>Powerful capabilities that set our solutions apart</p>
+          <p class="text-xl">Powerful capabilities that set our solutions apart</p>
         </div>
         
         <div class="features-container">
           <div class="feature-block">
             <h3 class="mb-2">Tailored Research Optimization</h3>
-            <p>Our approach processes complex data sets to provide actionable insights for strategic decision-making.</p>
+            <p class="text-xl">Our approach processes complex data sets to provide actionable insights for strategic decision-making.</p>
             <div class="feature-visualization">
               <img src="@/assets/sciencer.png" alt="Analytics Chart" class="rounded-xl" />
             </div>
@@ -128,7 +128,7 @@
           
           <div class="feature-block">
             <h3 class="mb-2">Research Data Processing</h3>
-            <p>Stay ahead with real-time updates and data processing capabilities for immediate decision support.</p>
+            <p class="text-xl">Stay ahead with real-time updates and data processing capabilities for immediate decision support.</p>
             <div class="feature-visualization">
               <img src="@/assets/crunch.png" alt="Data Processing Graph" class="rounded-xl"/>
             </div>
@@ -141,7 +141,7 @@
     <section class="final-section section mt-10 mb-20">
       <div class="container">
         <div class="section-header">
-          <h2>On to transform capabilities</h2>
+          <h2>Transformation capabilities</h2>
         </div>
         
         <div class="cta-button-container">

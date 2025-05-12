@@ -40,7 +40,7 @@ const contentLeftSections = {
     imageSrc: "transistor.jpg",
     title: "Optical transistors,",
     subtitle: "for the quantum internet.",
-    description: "Looking for absolutely cutting edge tech?",
+    description: "From researchers towards tech businesses. Deliver your projects faster, with better spend control and informative quality goals.",
     link: "",
     buttonText: "",
   },
@@ -66,14 +66,14 @@ const contentLeftSections = {
       <div class="container-lg mx-auto px-4 max-w-5xl">
         <div class="max-w-5xl mx-auto text-color-text-secondary">
           <div class="bg-glass p-4 mb-6 content-fade-in">
-            <p class="body-1">{{ $t("We offer a range of services to help you navigate technology challenges with confidence.") }}</p>
+            <p class="text-xl body-1">{{ $t("We offer a range of services to help you navigate technology challenges with confidence.") }}</p>
           </div>
 
           <div class="mb-8 content-fade-in content-fade-in-delay-1">
             <ComponentSectionLImage :content="contentLeftSections.newProducts"/>
             <div class="bg-glass p-4 mt-5">
               <h2 class="subtitle-1 mb-3">{{ $t("About the company") }}</h2>
-              <p class="body-1">
+              <p class="body-1 text-xl">
                 {{ $t("With a background in enterprise software, scientific research, and technological innovation, we cover over a decade of experience in software engineering, research, and leadership. As the technical leaders, we span an expertise over secure web infrastructure, advanced computing, research projects both civilian and military. From designing logic to holographic lithorgraphy, from measuring the earth with lasers to designing energy harvesting materials, we will monetize your ideas.") }}
               </p>
             </div>
@@ -83,7 +83,7 @@ const contentLeftSections = {
             <ComponentSectionRImage :content="contentLeftSections.newestProductser" />
             <div class="bg-glass p-4 mt-5">
               <h2 class="subtitle-1 mb-3">{{ $t("History") }}</h2>
-              <p class="body-1">
+              <p class="body-1 text-xl">
                 {{ $t("The company has been established in 1991 offering services in geodesy, cartography and print. Since then, the company has been through both tumultuous and good times, always focusing on delivering quality services. With the advent of a new technological era, the new PRZM brand encompasses the bold move into expanding the offering beyond only one area.") }}
               </p>
             </div>
@@ -93,7 +93,7 @@ const contentLeftSections = {
             <ComponentSectionLImage :content="contentLeftSections.newerProducts" />
             <div class="bg-glass p-4 mt-5">
               <h2 class="subtitle-1 mb-3">{{ $t("Our Expertise") }}</h2>
-              <p class="body-1">
+              <p class="body-1 text-xl">
                 {{ $t("Our team has extensive experience in enterprise software development, computational modeling, full-stack development, scientific programming, and cutting-edge research in fields such as AI, lithography, nanotechnology, and applied physics.") }}
               </p>
             </div>
@@ -101,11 +101,6 @@ const contentLeftSections = {
 
           <div class="mb-8 content-fade-in">
             <ComponentSectionRImage :content="contentLeftSections.newestProducts" />
-            <div class="bg-glass p-4 mt-5">
-              <p class="body-1">
-                {{ $t("If needed in the future, we offer construction legal advice, tailored geodesy and cartography according to the current state of the law in the Lower Silesian area of Poland.") }}
-              </p>
-            </div>
           </div>
 
           <div class="content-fade-in">

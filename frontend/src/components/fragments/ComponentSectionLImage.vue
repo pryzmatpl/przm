@@ -69,7 +69,7 @@ const resolvedImage = computed(() => {
             {{ $t(content.subtitle) }}
           </span>
         </h2>
-        <p class="mt-6 text-gray-300 leading-relaxed text-justify text-wrapper">
+        <p class="mt-6 text-gray-300 leading-relaxed text-justify text-wrapper text-xl">
           {{ $t(content.description) }}
         </p>
         <div class="button-wrapper" v-if="content.showButton">
