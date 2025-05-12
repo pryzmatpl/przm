@@ -25,7 +25,7 @@ const portfolioData = [
     title: 'MythicalHero.me',
     url: 'https://mythicalhero.me',
     description: 'Discover Your Cosmic Hero',
-    longDescription: 'Unleash your mythical identity through the power of zodiac influences. Create a unique hero based on your date of birth and cosmic destiny.',
+    longDescription: 'Unleash your mythical identity through the power of zodiac influences. Create a unique hero based on your date of birth and cosmic destiny. A completely AI-driven mythological epic for everyone!',
     imagePath: require('@/assets/mythicalhero.webp'),
     imageFallback: require('@/assets/mythicalhero.jpg'),
     tags: ['Zodiac', 'Personalization', 'Identity'],
