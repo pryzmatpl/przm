@@ -6,12 +6,12 @@
         <div class="hero-content">
           <h1 class="hero-title">
             Advanced 
-            <span class="text-primary">Technological Solutions</span> 
+            <span class="text-blue-500">Technological Solutions</span>
             for High-Tech Industries
           </h1>
           <p class="hero-subtitle">
-            We deliver tailored troubleshooting and efficiency solutions that drive innovation 
-            across defense, healthcare, finance, and beyond.
+            We deliver troubleshooting and efficiency solutions that drive innovation
+            across the web. We worked with defense, research, security and ML/AI towards quality increasing and time-saving automations.
           </p>
           <div class="hero-actions">
             <router-link to="/solutions" class="btn btn-primary">Explore Solutions</router-link>
