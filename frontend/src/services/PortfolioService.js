@@ -97,6 +97,17 @@ const portfolioData = [
     tags: ['Hardware', 'Firmware'],
     featured: false,
   },
+  {
+    id: 9,
+    title: 'Holographic Lithography',
+    url: 'https://github.com/pryzmatpl/holo',
+    description: 'Expanding the state of the art in silicon masking',
+    longDescription: 'Being part of a research team, we have researched, developed and tested a novel LCoS-based holographic lithography method.',
+    imagePath: require('@/assets/Holo.jpg'),
+    imageFallback: require('@/assets/Holo.jpg'),
+    tags: ['Hardware', 'Firmware'],
+    featured: false,
+  },
 ];
 
 /**
