@@ -10,6 +10,7 @@ services:
       - backend
     environment:
       - VUE_APP_API_URL=http://localhost:9011
+    restart: unless-stopped
 
   backend:
     build:
@@ -22,6 +23,7 @@ services:
       - GIN_MODE=release
       - PORT=9011
       - MONGO_URI=mongodb://mongodb:27017/pryzm
+    restart: unless-stopped
     
   mongodb:
     image: mongo:latest
@@ -31,6 +33,7 @@ services:
       - db_data:/data/db
     environment:
       - MONGO_INITDB_DATABASE=pryzm
+    restart: unless-stopped
 
 volumes:
   db_data: 
