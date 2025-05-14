@@ -89,8 +89,8 @@ const $t = inject('$t');
                     <div>
                       <p class="text-gray-400 text-sm">{{ $t("Office Address") }}</p>
                       <p class="text-lg">
-                        <strong>{{ $t("Pryzmat sp. z o.o.") }}</strong><br>
-                        {{ $t("Słowackiego 14, 58-500 Jelenia Góra") }}
+                        <strong>{{ $t("PRZM Technologies") }}</strong><br>
+                        {{ $t("Kilińskiego 28/16, 50-264 Wrocław") }}
                       </p>
                     </div>
                   </div>
