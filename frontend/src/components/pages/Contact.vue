@@ -75,7 +75,7 @@ const $t = inject('$t');
                     </div>
                     <div>
                       <p class="text-gray-400 text-sm">{{ $t("Phone") }}</p>
-                      <a href="tel:+48757648485" class="text-lg text-primary hover:text-primary-light hover:underline transition-all">(+48) 757 648 485</a>
+                      <a href="tel:+48883961639" class="text-lg text-primary hover:text-primary-light hover:underline transition-all">(+48) 883 961 639</a>
                     </div>
                   </div>
 
