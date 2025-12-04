@@ -1,5 +1,5 @@
 <script setup>
-import {ref, onMounted, inject, computed} from 'vue';
+import {ref, onMounted, inject} from 'vue';
 
 const $t = inject('$t');
 
@@ -91,7 +91,7 @@ const quickReplyResponses = {
   }
 };
 
-const handleQuickReply = (reply) => {
+const handleQuickReply = async (reply) => {
   if (!reply) return;
   
   // Handle actions
@@ -108,19 +108,21 @@ const handleQuickReply = (reply) => {
     return;
   }
   
-  // Add user message
-  addMessage('user', reply.label);
-  
   // Get response
   const response = quickReplyResponses[reply.value];
   if (response) {
+    // Add user message
+    addMessage('user', reply.label);
     setTimeout(() => {
       addMessage('assistant', response.content, response.quickReplies);
       conversationContext.value = reply.value;
     }, 500);
   } else {
-    // Fallback to AI
-    sendMessageToAI(reply.label);
+    // Fallback to AI - add the reply as a user message first
+    addMessage('user', reply.label);
+    showQuickReplies.value = false;
+    isLoading.value = true;
+    await sendMessageToAI();
   }
   
   showQuickReplies.value = false;
@@ -145,10 +147,10 @@ const sendMessage = async () => {
   showQuickReplies.value = false;
   isLoading.value = true;
 
-  await sendMessageToAI(userContent);
+  await sendMessageToAI();
 };
 
-const sendMessageToAI = async (userContent) => {
+const sendMessageToAI = async () => {
   try {
     // Prepend system context to guide AI toward CUO
     // Limit message history to last 6 messages for cost efficiency
