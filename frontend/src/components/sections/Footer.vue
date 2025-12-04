@@ -47,17 +47,20 @@ const submitNewsletter = () => {
     errorMessage.value = 'Please enter a valid email address';
     return;
   }
-  console.log("test")
   api.post('api/register-newsletter', {
     email: newsletterEmail.value
   }).then((resp)=> {
-    console.log(resp);
+    console.log('Newsletter subscription successful:', resp);
     subscribeSuccess.value = true;
     subscribeError.value = false;
     newsletterEmail.value = '';
+    setTimeout(() => {
+      subscribeSuccess.value = false;
+    }, 5000);
   }).catch((e)=>{
+    console.error('Newsletter subscription error:', e);
     subscribeError.value = true;
-    console.log(e)
+    errorMessage.value = e.response?.data?.error || 'Failed to subscribe. Please try again.';
   });
 };
 </script>

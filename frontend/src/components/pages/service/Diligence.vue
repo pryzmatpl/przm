@@ -1,5 +1,6 @@
 <script setup>
 import WelcomeBox from '@c/fragments/WelcomeBox.vue';
+import SolutionChatWindow from '@c/fragments/SolutionChatWindow.vue';
 
 defineOptions({
   name: 'DiligenceServicePage'
@@ -163,12 +164,17 @@ defineOptions({
       </section>
 
       <!-- CTA -->
-      <section class="bg-glass p-8 rounded-xl text-center">
+      <section class="bg-glass p-8 rounded-xl text-center mb-8">
         <h2 class="text-2xl font-bold text-white mb-4">Ready for Objective Evaluation?</h2>
         <p class="text-gray-300 mb-6">Let's discuss how Due Diligence can help you cut through inefficiencies, identify waste, and make smarter technical decisions.</p>
         <router-link to="/contact" class="btn-cta inline-block">
           Get in Touch
         </router-link>
+      </section>
+
+      <!-- Chat Window -->
+      <section class="max-w-2xl mx-auto">
+        <SolutionChatWindow />
       </section>
     </article>
   </div>

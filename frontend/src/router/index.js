@@ -120,6 +120,16 @@ const routes = [
     }
   },
   {
+    path: '/quote',
+    name: 'quote',
+    component: DefaultView,
+    meta: {
+      title: 'Request a Quote - Pryzm.at',
+      description: 'Get a personalized quote for our technological solutions and services.',
+      keywords: 'quote, pricing, consultation, tech services'
+    }
+  },
+  {
     path: '/blog',
     name: 'blog',
     component: DefaultView,

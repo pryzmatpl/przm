@@ -59,8 +59,36 @@ func HandleContactForm(c *gin.Context) {
 		return
 	}
 
-	// TODO: Save to database or send email
-	log.Printf("Contact form received: %+v", form)
+	// Get the contact collection
+	collection := database.GetCollection("contact_submissions")
+	
+	// Set timestamp
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	// Create document with timestamp and source tracking
+	contactDoc := bson.M{
+		"name":         form.Name,
+		"email":        form.Email,
+		"subject":      form.Subject,
+		"message":      form.Message,
+		"sourcePage":   form.SourcePage,
+		"solutionName": form.SolutionName,
+		"timestamp":    time.Now(),
+	}
+
+	// Insert to MongoDB
+	_, err := collection.InsertOne(ctx, contactDoc)
+	if err != nil {
+		log.Printf("Error saving contact form: %v", err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"status":  "error",
+			"message": "Failed to save contact form",
+		})
+		return
+	}
+
+	log.Printf("Contact form saved to MongoDB: %+v", form)
 
 	c.JSON(http.StatusOK, gin.H{
 		"status":  "success",

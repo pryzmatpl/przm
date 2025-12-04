@@ -19,10 +19,12 @@ type DemoRequest struct {
 
 // ContactForm represents a contact form submission
 type ContactForm struct {
-	Name    string `json:"name" binding:"required"`
-	Email   string `json:"email" binding:"required,email"`
-	Subject string `json:"subject"`
-	Message string `json:"message" binding:"required"`
+	Name         string `json:"name" binding:"required"`
+	Email        string `json:"email" binding:"required,email"`
+	Subject      string `json:"subject"`
+	Message      string `json:"message" binding:"required"`
+	SourcePage   string `json:"sourcePage,omitempty"`
+	SolutionName string `json:"solutionName,omitempty"`
 }
 
 // NewsletterSignup represents a newsletter subscription

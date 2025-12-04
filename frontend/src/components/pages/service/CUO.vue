@@ -55,24 +55,24 @@ const handleTierInquiry = (tier) => {
             <div class="price text-3xl font-bold text-blue-400 mb-4">$3-5k</div>
             <ul class="space-y-3 text-gray-300 mb-6">
               <li class="flex items-start">
-                <span class="text-blue-400 mr-2">✓</span>
-                <span>Tech stack audit OR Deep Tech investment portfolio review</span>
+                <span class="text-blue-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Tech stack audit OR Deep Tech investment portfolio review</span>
               </li>
               <li class="flex items-start">
-                <span class="text-blue-400 mr-2">✓</span>
-                <span>Optimize infrastructure for scale OR identify Deep Tech Power Law opportunities</span>
+                <span class="text-blue-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Optimize infrastructure for scale OR identify Deep Tech Power Law opportunities</span>
               </li>
               <li class="flex items-start">
-                <span class="text-blue-400 mr-2">✓</span>
-                <span>Migration plan & upgrade path OR Deep Tech investment thesis</span>
+                <span class="text-blue-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Migration plan & upgrade path OR Deep Tech investment thesis</span>
               </li>
               <li class="flex items-start">
-                <span class="text-blue-400 mr-2">✓</span>
-                <span>30-day support included</span>
+                <span class="text-blue-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">30-day support included</span>
               </li>
               <li class="flex items-start">
-                <span class="text-blue-400 mr-2">✓</span>
-                <span>PDF report + actionable deliverables</span>
+                <span class="text-blue-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">PDF report + actionable deliverables</span>
               </li>
             </ul>
             <button 
@@ -93,24 +93,24 @@ const handleTierInquiry = (tier) => {
             <div class="text-sm text-gray-400 mb-4">Limited to 4-8 clients</div>
             <ul class="space-y-3 text-gray-300 mb-6">
               <li class="flex items-start">
-                <span class="text-purple-400 mr-2">✓</span>
-                <span>Unlimited async advice via Telegram/Slack</span>
+                <span class="text-purple-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Unlimited async advice via Telegram/Slack</span>
               </li>
               <li class="flex items-start">
-                <span class="text-purple-400 mr-2">✓</span>
-                <span>Tech decisions OR Deep Tech investment opportunities ($500+ threshold)</span>
+                <span class="text-purple-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Tech decisions OR Deep Tech investment opportunities ($500+ threshold)</span>
               </li>
               <li class="flex items-start">
-                <span class="text-purple-400 mr-2">✓</span>
-                <span>Deep Tech Power Law Risk analysis on asymmetric bets</span>
+                <span class="text-purple-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Deep Tech Power Law Risk analysis on asymmetric bets</span>
               </li>
               <li class="flex items-start">
-                <span class="text-purple-400 mr-2">✓</span>
-                <span>Priority response (24-48hrs)</span>
+                <span class="text-purple-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Priority response (24-48hrs)</span>
               </li>
               <li class="flex items-start">
-                <span class="text-purple-400 mr-2">✓</span>
-                <span>Quarterly Deep Tech Investment Strategy review</span>
+                <span class="text-purple-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Quarterly Deep Tech Investment Strategy review</span>
               </li>
             </ul>
             <button 
@@ -130,24 +130,24 @@ const handleTierInquiry = (tier) => {
             <div class="price text-3xl font-bold text-green-400 mb-4">$7-12k</div>
             <ul class="space-y-3 text-gray-300 mb-6">
               <li class="flex items-start">
-                <span class="text-green-400 mr-2">✓</span>
-                <span>Custom tech infrastructure OR Deep Tech Investment Strategy</span>
+                <span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Custom tech infrastructure OR Deep Tech Investment Strategy</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-400 mr-2">✓</span>
-                <span>Scalable systems built for 10-15yr horizon</span>
+                <span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Scalable systems built for 10-15yr horizon</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-400 mr-2">✓</span>
-                <span>Full sourcing, vetting & Power Law Risk assessment</span>
+                <span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Full sourcing, vetting & Power Law Risk assessment</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-400 mr-2">✓</span>
-                <span>Build documentation & evolution path</span>
+                <span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Build documentation & evolution path</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-400 mr-2">✓</span>
-                <span>Ongoing support on strategic decisions</span>
+                <span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                <span class="flex-1">Ongoing support on strategic decisions</span>
               </li>
             </ul>
             <button 
@@ -166,39 +166,20 @@ const handleTierInquiry = (tier) => {
       <h2 class="text-3xl font-bold text-white text-center mb-12">How It Works</h2>
       <div class="process-timeline space-y-8">
         <div class="process-step bg-glass p-6 rounded-xl">
-          <div class="step-number bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
           <h3 class="text-xl font-bold text-white mb-2">Audit</h3>
           <p class="text-gray-300">We cut through your company's complexity—review tech stack, processes, and Deep Tech investment portfolio. What works, what's waste, what's missing. No sugar-coating.</p>
         </div>
         <div class="process-step bg-glass p-6 rounded-xl">
-          <div class="step-number bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
           <h3 class="text-xl font-bold text-white mb-2">Transform</h3>
           <p class="text-gray-300">I design your optimization path with specific recommendations. Power Law Risk analysis where asymmetric upside matters. Turn the tangled mess into a working machine.</p>
         </div>
         <div class="process-step bg-glass p-6 rounded-xl">
-          <div class="step-number bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
           <h3 class="text-xl font-bold text-white mb-2">Execute</h3>
           <p class="text-gray-300">Your team executes the plan. I provide support, answer questions, and help you avoid common pitfalls. Streamlined execution, not chaos.</p>
         </div>
         <div class="process-step bg-glass p-6 rounded-xl">
-          <div class="step-number bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">4</div>
           <h3 class="text-xl font-bold text-white mb-2">Optimize</h3>
           <p class="text-gray-300">Ongoing guidance ensures your company evolves without accumulating new complexity. Retainer clients get priority access to keep the machine tuned.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="testimonials-section py-12 max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-white text-center mb-12">What Clients Say</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="testimonial bg-glass p-6 rounded-xl">
-          <p class="text-gray-300 italic mb-4">"CUO transformed our chaotic tech stack into a streamlined machine. Saved us $50k in wasted infrastructure and cut deployment time by 70%. The 48-hour audit was brutal but necessary."</p>
-          <p class="text-white font-semibold">— Startup CTO</p>
-        </div>
-        <div class="testimonial bg-glass p-6 rounded-xl">
-          <p class="text-gray-300 italic mb-4">"The retainer pays for itself. Every major decision gets Power Law Risk analysis. No more expensive mistakes. Our company runs like a tuned machine now."</p>
-          <p class="text-white font-semibold">— Company Founder</p>
         </div>
       </div>
     </section>
