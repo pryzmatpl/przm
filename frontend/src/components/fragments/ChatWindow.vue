@@ -168,6 +168,39 @@ const isBookingIntent = (message) => {
   return bookingKeywords.some(keyword => lowerMessage.includes(keyword));
 };
 
+// Detect technical questions
+const isTechnicalQuestion = (message) => {
+  const technicalKeywords = [
+    'how does', 'how do', 'how to', 'what is', 'what are', 'explain',
+    'why does', 'why do', 'difference between', 'vs', 'versus',
+    'architecture', 'algorithm', 'implementation', 'code', 'programming',
+    'api', 'database', 'server', 'framework', 'library', 'stack',
+    'performance', 'optimization', 'scalability', 'security', 'deployment',
+    'docker', 'kubernetes', 'aws', 'cloud', 'infrastructure',
+    'javascript', 'python', 'react', 'vue', 'node', 'backend', 'frontend',
+    'sql', 'nosql', 'redis', 'cache', 'queue', 'microservices'
+  ];
+  const lowerMessage = message.toLowerCase();
+  const hasQuestionMark = message.includes('?');
+  const hasTechnicalKeyword = technicalKeywords.some(keyword => lowerMessage.includes(keyword));
+  
+  // Also check for question patterns
+  const questionPatterns = [
+    /^(how|what|why|when|where|which|who)\s+/i,
+    /^can you/i,
+    /^could you/i,
+    /^would you/i
+  ];
+  const hasQuestionPattern = questionPatterns.some(pattern => pattern.test(message.trim()));
+  
+  return (hasQuestionMark || hasQuestionPattern) && hasTechnicalKeyword;
+};
+
+// Get last user message for context
+const getLastUserMessage = () => {
+  return [...messages.value].reverse().find(msg => msg.role === 'user');
+};
+
 const sendMessage = async () => {
   if (newMessage.value.trim() === '') return;
 
@@ -193,7 +226,7 @@ const sendMessage = async () => {
 const sendMessageToAI = async () => {
   try {
     // Check last user message for booking intent (in case it wasn't caught earlier)
-    const lastUserMessage = [...messages.value].reverse().find(msg => msg.role === 'user');
+    const lastUserMessage = getLastUserMessage();
     if (lastUserMessage && isBookingIntent(lastUserMessage.content)) {
       addMessage('assistant', `Perfect! Here's my calendar: ${CALENDLY_URL}\n\nPick a time that works—we'll discuss your setup and see which CUO tier fits. Looking forward to it!`, [
         { label: 'Open Calendar', value: 'open_calendly', action: 'calendly' },
@@ -243,16 +276,29 @@ const sendMessageToAI = async () => {
     }
   } catch (err) {
     console.error('Error:', err);
+    const lastUserMessage = getLastUserMessage();
+    
     // Check if last message was about booking
-    const lastUserMessage = [...messages.value].reverse().find(msg => msg.role === 'user');
     if (lastUserMessage && isBookingIntent(lastUserMessage.content)) {
       addMessage('assistant', `No problem! Here's my calendar: ${CALENDLY_URL}\n\nPick a time that works for you.`, [
         { label: 'Open Calendar', value: 'open_calendly', action: 'calendly' }
       ]);
       showQuickReplies.value = true;
-    } else {
-      addMessage('assistant', `Sorry, an error occurred. You can email me at pryzmat@pryzmat.pl or book a call directly: ${CALENDLY_URL}`, [
-        { label: 'Book a Call', value: 'book_call', action: 'calendly' },
+    } 
+    // Check if it's a technical question - answer like Elon (Pareto 20/80)
+    else if (lastUserMessage && isTechnicalQuestion(lastUserMessage.content)) {
+      const technicalAnswer = generateElonStyleAnswer(lastUserMessage.content);
+      addMessage('assistant', technicalAnswer, [
+        { label: 'Book CUO Consultation', value: 'book_call', action: 'calendly' },
+        { label: 'Ask Another Question', value: 'ask_another' }
+      ]);
+      showQuickReplies.value = true;
+    }
+    // Default: redirect to CUO focus
+    else {
+      addMessage('assistant', `Let's focus on what matters: optimizing your setup or investment strategy. That's what CUO does—turn waste into weapons, optimize for long-term value.\n\nWant to discuss your specific situation? Book a call: ${CALENDLY_URL}`, [
+        { label: 'Book CUO Call', value: 'book_call', action: 'calendly' },
+        { label: 'See CUO Tiers', value: 'cuo_page', action: 'link' },
         { label: 'Email Instead', value: 'email_contact' }
       ]);
       showQuickReplies.value = true;
@@ -261,6 +307,49 @@ const sendMessageToAI = async () => {
     isLoading.value = false;
     scrollToBottom();
   }
+};
+
+// Generate Elon-style technical answer (Pareto 20/80 principle)
+const generateElonStyleAnswer = (question) => {
+  const lowerQuestion = question.toLowerCase();
+  
+  // Architecture/Infrastructure questions
+  if (lowerQuestion.includes('architecture') || lowerQuestion.includes('infrastructure') || lowerQuestion.includes('scalability')) {
+    return "Core principle: Start simple, scale what works. Most systems fail from over-engineering. Build for 10x, not 1000x. Use proven patterns (REST, queues, caches). The 20% that matters: data model, API contracts, monitoring. Everything else is optimization theater.";
+  }
+  
+  // Performance/Optimization
+  if (lowerQuestion.includes('performance') || lowerQuestion.includes('optimization') || lowerQuestion.includes('slow')) {
+    return "Measure first. 80% of slowness comes from: database queries (N+1), missing indexes, no caching, bloated payloads. Fix those. Don't optimize code that runs once. Profile, don't guess. Cache aggressively. That's it.";
+  }
+  
+  // Deployment/DevOps
+  if (lowerQuestion.includes('deploy') || lowerQuestion.includes('docker') || lowerQuestion.includes('kubernetes') || lowerQuestion.includes('ci/cd')) {
+    return "Automate everything. Docker for consistency. K8s if you need orchestration (most don't). CI/CD is non-negotiable. The 20%: version control, automated tests, one-command deploys. Everything else is nice-to-have. Start there.";
+  }
+  
+  // Database questions
+  if (lowerQuestion.includes('database') || lowerQuestion.includes('sql') || lowerQuestion.includes('nosql') || lowerQuestion.includes('data')) {
+    return "SQL for structured, relational data. NoSQL for scale or flexibility. Most apps need SQL. The 20%: proper indexes, connection pooling, query optimization. Don't overthink it. PostgreSQL solves 90% of problems.";
+  }
+  
+  // Framework/Stack questions
+  if (lowerQuestion.includes('framework') || lowerQuestion.includes('stack') || lowerQuestion.includes('react') || lowerQuestion.includes('vue') || lowerQuestion.includes('node')) {
+    return "Framework doesn't matter if you understand fundamentals. Pick one, master it. React/Vue are tools—the 20%: component architecture, state management, routing. Everything else is syntax. Focus on patterns, not libraries.";
+  }
+  
+  // Security questions
+  if (lowerQuestion.includes('security') || lowerQuestion.includes('auth') || lowerQuestion.includes('encryption')) {
+    return "Security is layers. The 20%: HTTPS everywhere, proper auth (OAuth2/JWT), input validation, secrets management. Don't roll your own crypto. Use battle-tested libraries. Most breaches come from misconfiguration, not clever hacks.";
+  }
+  
+  // API questions
+  if (lowerQuestion.includes('api') || lowerQuestion.includes('rest') || lowerQuestion.includes('graphql')) {
+    return "REST for simplicity. GraphQL if you need flexibility. The 20%: clear contracts, versioning strategy, rate limiting, error handling. Everything else is preference. Start REST, evolve if needed.";
+  }
+  
+  // General technical - provide Pareto principle answer
+  return "Focus on the 20% that delivers 80% of value. Most complexity is unnecessary. Understand fundamentals, use proven patterns, measure everything. Don't optimize prematurely. Build, measure, iterate. That's the game.";
 };
 
 const scrollToBottom = () => {
