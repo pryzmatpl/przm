@@ -9,11 +9,11 @@ const CUO_PAGE_URL = '/service/cuo';
 // Initial CUO-focused greeting
 const initialGreeting = {
   role: 'assistant',
-  content: "Hey—I'm Peter. If you're here, you're probably staring at a setup (tech stack, car, tools) that's 80% waste and 20% magic. I fix that: Durable upgrades that pay for themselves 5x over. What's your biggest 'should've known better' buy lately?",
+  content: "Hey—I'm Peter. If you're here, your company is probably a tangled mess of technical debt, misaligned Deep Tech investments, and wasted resources. CUO cuts through that complexity and transforms it into a streamlined, tuned, working machine. What's your biggest company complexity challenge?",
   quickReplies: [
-    { label: 'Tech/Software Stack', value: 'tech' },
-    { label: 'Car or Gear', value: 'gear' },
-    { label: 'Investment Strategy', value: 'investment' },
+    { label: 'Tech Stack Issues', value: 'tech' },
+    { label: 'Company Transformation', value: 'gear' },
+    { label: 'Deep Tech Investment Strategy', value: 'investment' },
     { label: 'Quick Audit Chat', value: 'audit' },
     { label: 'Just Browsing', value: 'browsing' }
   ]
@@ -27,7 +27,7 @@ const showQuickReplies = ref(true);
 const conversationContext = ref('initial');
 
 // CUO system context - concise for cost efficiency
-const cuoSystemContext = `You are Peter, Chief Upgrade Officer at Pryzm.at. Philosophy: "I don't impulse-buy. Neither should you." Help optimize tech stacks OR investment strategy with Power Law Risk.
+const cuoSystemContext = `You are Peter, Chief Upgrade Officer at Pryzm.at. Philosophy: "I don't impulse-buy. Neither should you." Help optimize tech stacks OR Deep Tech Investment Strategy with Power Law Risk.
 
 Offerings: 48-Hour Purge ($3-5k), Annual Retainer ($15-25k/yr), Niche Builds ($7-12k).
 
@@ -44,15 +44,15 @@ const quickReplyResponses = {
     ]
   },
   gear: {
-    content: "Ah, the E46 life—proven mileage beats new-car hype. I can spec a 'Peter-certified' daily driver that lasts 15 years. ($7-12k, including sourcing used gems.) Want details or photos?",
+    content: "Company transformation is the game. I help turn your tangled mess into a streamlined machine. Niche Builds ($7-12k) include custom infrastructure, full sourcing, and Power Law Risk assessment. Want to discuss your company's specific challenges?",
     quickReplies: [
       { label: 'Book Niche Build', value: 'book_build', action: 'calendly' },
-      { label: 'See Examples', value: 'gear_examples' },
+      { label: 'See Transformation Process', value: 'gear_examples' },
       { label: 'Tell Me More', value: 'gear_details' }
     ]
   },
   investment: {
-    content: "Power Law Risk is the framework for asymmetric bets—where upside massively outweighs downside. I help founders identify those opportunities. Annual retainer ($15-25k/yr) includes unlimited investment strategy advice.",
+    content: "Deep Tech Investment Strategy with Power Law Risk—framework for asymmetric bets where upside massively outweighs downside. I help founders identify Deep Tech opportunities. Annual retainer ($15-25k/yr) includes unlimited Deep Tech Investment Strategy advice.",
     quickReplies: [
       { label: 'Book Strategy Call', value: 'book_investment', action: 'calendly' },
       { label: 'What is Power Law Risk?', value: 'power_law_explain' },
@@ -60,7 +60,7 @@ const quickReplyResponses = {
     ]
   },
   audit: {
-    content: "Perfect. 48-Hour Purge & Rebuild: Complete audit of your tech stack OR investment portfolio, upgrade path, migration plan, 30-day support. ($3-5k, saves you 10x in future regrets.) Ready to book?",
+    content: "Perfect. 48-Hour Purge & Rebuild: Complete audit of your tech stack OR Deep Tech investment portfolio, upgrade path, migration plan, 30-day support. ($3-5k, saves you 10x in future regrets.) Ready to book?",
     quickReplies: [
       { label: 'Book Audit Call', value: 'book_audit', action: 'calendly' },
       { label: 'See Full CUO Page', value: 'cuo_page', action: 'link' },
@@ -68,25 +68,25 @@ const quickReplyResponses = {
     ]
   },
   browsing: {
-    content: "No pressure—my philosophy: Buy minimum viable awesomeness that evolves. Check out CUO retainers for anytime veto power on $500+ spends. What's one upgrade on your mind?",
+    content: "No pressure—CUO is the sword that cuts the Gordian Knot in tech. We cut through your company's tangled mess and turn it into a working machine. Check out CUO retainers for ongoing transformation guidance. What's your company's biggest complexity challenge?",
     quickReplies: [
       { label: 'Explore CUO', value: 'cuo_page', action: 'link' },
       { label: 'See Pricing', value: 'pricing_info' },
-      { label: 'Tell Me Your Setup', value: 'setup_share' }
+      { label: 'Tell Me Your Company', value: 'setup_share' }
     ]
   },
   retainer_info: {
-    content: "Annual Retainer ($15-25k/yr, limited to 4-8 clients): Unlimited async advice via Telegram/Slack, Power Law Risk analysis on $500+ decisions, priority 24-48hr response, quarterly strategy reviews. Book a call to see if we're a fit.",
+    content: "Annual Retainer ($15-25k/yr, limited to 4-8 clients): Unlimited async advice via Telegram/Slack, Deep Tech Power Law Risk analysis on $500+ decisions, priority 24-48hr response, quarterly Deep Tech Investment Strategy reviews. Book a call to see if we're a fit.",
     quickReplies: [
       { label: 'Book Retainer Call', value: 'book_retainer', action: 'calendly' },
       { label: 'See All Tiers', value: 'cuo_page', action: 'link' }
     ]
   },
   power_law_explain: {
-    content: "Power Law Risk = framework for asymmetric opportunities. Most bets fail, but the few that win return 10-100x. I help you identify where to place those bets—in tech infrastructure OR investments. It's an asset when you know where to look.",
+    content: "Power Law Risk = framework for asymmetric opportunities in Deep Tech. Most bets fail, but the few that win return 10-100x. I help you identify where to place those bets—in tech infrastructure OR Deep Tech investments. It's an asset when you know where to look.",
     quickReplies: [
       { label: 'Book Strategy Call', value: 'book_investment', action: 'calendly' },
-      { label: 'See Investment Tier', value: 'retainer_info' }
+      { label: 'See Deep Tech Investment Tier', value: 'retainer_info' }
     ]
   },
   email_contact: {
@@ -97,7 +97,7 @@ const quickReplyResponses = {
     ]
   },
   more_info: {
-    content: "CUO offers three tiers: 48-Hour Purge ($3-5k), Annual Retainer ($15-25k/yr), and Niche Builds ($7-12k). All focus on optimizing tech stacks OR investment strategy with Power Law Risk analysis. Want details on a specific tier?",
+    content: "CUO offers three tiers for company transformation: 48-Hour Purge ($3-5k) cuts through complexity fast, Annual Retainer ($15-25k/yr) provides ongoing guidance, and Niche Builds ($7-12k) for custom infrastructure. All focus on turning tangled messes into working machines. Want details on a specific tier?",
     quickReplies: [
       { label: '48-Hour Purge', value: 'audit' },
       { label: 'Annual Retainer', value: 'retainer_info' },
@@ -210,7 +210,7 @@ const isCUOQuestion = (message) => {
     'understand.*offer', 'what.*cuo', 'tell me.*cuo',
     'cuo.*offer', 'cuo.*service', 'cuo.*tier',
     '48.*hour', 'purge.*rebuild', 'retainer', 'niche.*build',
-    'power law', 'investment.*strategy'
+    'power law', 'deep tech.*investment', 'investment.*strategy'
   ];
   const lowerMessage = message.toLowerCase();
   return cuoKeywords.some(keyword => {
@@ -346,7 +346,7 @@ const sendMessageToAI = async () => {
     }
     // Check if it's a CUO question - provide helpful info
     else if (isCUOQuestion(lastUserMessage.content)) {
-      addMessage('assistant', 'CUO (Chief Upgrade Officer) helps you optimize tech stacks OR investment strategy with Power Law Risk analysis. Three tiers: 48-Hour Purge ($3-5k), Annual Retainer ($15-25k/yr), Niche Builds ($7-12k). Want details on a specific tier?', [
+      addMessage('assistant', 'CUO (Chief Upgrade Officer) helps you optimize tech stacks OR Deep Tech Investment Strategy with Power Law Risk analysis. Three tiers: 48-Hour Purge ($3-5k), Annual Retainer ($15-25k/yr), Niche Builds ($7-12k). Want details on a specific tier?', [
         { label: '48-Hour Purge', value: 'audit' },
         { label: 'Annual Retainer', value: 'retainer_info' },
         { label: 'Niche Builds', value: 'gear' },
@@ -356,7 +356,7 @@ const sendMessageToAI = async () => {
     }
     // Only redirect to CUO if it's truly off-topic AND we have an error
     else {
-      addMessage('assistant', `I had trouble processing that. Let's focus on what matters: optimizing your setup or investment strategy. That's what CUO does—turn waste into weapons, optimize for long-term value.\n\nWant to discuss your specific situation? Book a call: ${CALENDLY_URL}`, [
+      addMessage('assistant', `I had trouble processing that. Let's focus on what matters: optimizing your setup or Deep Tech Investment Strategy. That's what CUO does—turn waste into weapons, optimize for long-term value.\n\nWant to discuss your specific situation? Book a call: ${CALENDLY_URL}`, [
         { label: 'Book CUO Call', value: 'book_call', action: 'calendly' },
         { label: 'See CUO Tiers', value: 'cuo_page', action: 'link' },
         { label: 'Email Instead', value: 'email_contact' }

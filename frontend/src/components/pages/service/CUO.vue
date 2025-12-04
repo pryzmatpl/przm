@@ -26,16 +26,16 @@ const handleTierInquiry = (tier) => {
     <!-- Philosophy Section -->
     <section class="philosophy-section max-w-4xl mx-auto pt-8 pb-12">
       <div class="bg-glass p-8 rounded-xl mb-8">
-        <h2 class="text-3xl font-bold text-white mb-4">I don't impulse-buy. Neither should you.</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">The Sword that Cuts the Gordian Knot</h2>
         <div class="text-gray-300 leading-relaxed space-y-4 text-lg">
           <p>
-            Tired of $10k regrets on tech that dies in 2 years? Or worse—missing the one investment that could 10x your startup? I turn waste into weapons and risk into returns.
+            Your startup is a tangled mess of technical debt, misaligned investments, and wasted resources—a Gordian Knot of complexity. I cut through it and turn chaos into a streamlined, tuned, working machine.
           </p>
           <p>
-            My philosophy is simple: <strong class="text-white">Solve real problems, not buy hype.</strong> Every decision should be durable, upgradable, and maximize long-term value. Whether it's optimizing your tech stack to scale without breaking, or consulting on investments where <strong class="text-white">Power Law Risk</strong> becomes your asset—I help busy founders make decisions that compound.
+            CUO is a transformative service for startups and companies: <strong class="text-white">The sword that cuts the Gordian Knot in tech.</strong> We don't buy hype, we solve real problems. Every decision should be durable, scalable, and maximize long-term value. Whether it's optimizing your tech stack to scale without breaking, or consulting on <strong class="text-white">Deep Tech Investment Strategy</strong> where <strong class="text-white">Power Law Risk</strong> becomes your asset—I help companies make decisions that compound.
           </p>
           <p>
-            <strong class="text-white">Stack Optimization or Investment Strategy:</strong> Optimize your tech for scale, or consult on bets where asymmetric upside matters. No fluff, just systems that compound.
+            <strong class="text-white">From Tangled Mess to Working Machine:</strong> Transform your company's infrastructure, processes, and Deep Tech Investment Strategy. No fluff, just systems that work.
           </p>
         </div>
       </div>
@@ -56,15 +56,15 @@ const handleTierInquiry = (tier) => {
             <ul class="space-y-3 text-gray-300 mb-6">
               <li class="flex items-start">
                 <span class="text-blue-400 mr-2">✓</span>
-                <span>Tech stack audit OR investment portfolio review</span>
+                <span>Tech stack audit OR Deep Tech investment portfolio review</span>
               </li>
               <li class="flex items-start">
                 <span class="text-blue-400 mr-2">✓</span>
-                <span>Optimize infrastructure for scale OR identify Power Law opportunities</span>
+                <span>Optimize infrastructure for scale OR identify Deep Tech Power Law opportunities</span>
               </li>
               <li class="flex items-start">
                 <span class="text-blue-400 mr-2">✓</span>
-                <span>Migration plan & upgrade path OR investment thesis</span>
+                <span>Migration plan & upgrade path OR Deep Tech investment thesis</span>
               </li>
               <li class="flex items-start">
                 <span class="text-blue-400 mr-2">✓</span>
@@ -98,11 +98,11 @@ const handleTierInquiry = (tier) => {
               </li>
               <li class="flex items-start">
                 <span class="text-purple-400 mr-2">✓</span>
-                <span>Tech decisions OR investment opportunities ($500+ threshold)</span>
+                <span>Tech decisions OR Deep Tech investment opportunities ($500+ threshold)</span>
               </li>
               <li class="flex items-start">
                 <span class="text-purple-400 mr-2">✓</span>
-                <span>Power Law Risk analysis on asymmetric bets</span>
+                <span>Deep Tech Power Law Risk analysis on asymmetric bets</span>
               </li>
               <li class="flex items-start">
                 <span class="text-purple-400 mr-2">✓</span>
@@ -110,7 +110,7 @@ const handleTierInquiry = (tier) => {
               </li>
               <li class="flex items-start">
                 <span class="text-purple-400 mr-2">✓</span>
-                <span>Quarterly strategy review</span>
+                <span>Quarterly Deep Tech Investment Strategy review</span>
               </li>
             </ul>
             <button 
@@ -131,7 +131,7 @@ const handleTierInquiry = (tier) => {
             <ul class="space-y-3 text-gray-300 mb-6">
               <li class="flex items-start">
                 <span class="text-green-400 mr-2">✓</span>
-                <span>Custom tech infrastructure OR investment strategy</span>
+                <span>Custom tech infrastructure OR Deep Tech Investment Strategy</span>
               </li>
               <li class="flex items-start">
                 <span class="text-green-400 mr-2">✓</span>
@@ -147,7 +147,7 @@ const handleTierInquiry = (tier) => {
               </li>
               <li class="flex items-start">
                 <span class="text-green-400 mr-2">✓</span>
-                <span>Lifetime support on strategic decisions</span>
+                <span>Ongoing support on strategic decisions</span>
               </li>
             </ul>
             <button 
@@ -168,22 +168,22 @@ const handleTierInquiry = (tier) => {
         <div class="process-step bg-glass p-6 rounded-xl">
           <div class="step-number bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
           <h3 class="text-xl font-bold text-white mb-2">Audit</h3>
-          <p class="text-gray-300">We review your tech stack or investment portfolio—what works, what's waste, what's missing. No sugar-coating.</p>
+          <p class="text-gray-300">We cut through your company's complexity—review tech stack, processes, and Deep Tech investment portfolio. What works, what's waste, what's missing. No sugar-coating.</p>
         </div>
         <div class="process-step bg-glass p-6 rounded-xl">
           <div class="step-number bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
-          <h3 class="text-xl font-bold text-white mb-2">Spec</h3>
-          <p class="text-gray-300">I design your optimization path with specific recommendations. Power Law Risk analysis where asymmetric upside matters.</p>
+          <h3 class="text-xl font-bold text-white mb-2">Transform</h3>
+          <p class="text-gray-300">I design your optimization path with specific recommendations. Power Law Risk analysis where asymmetric upside matters. Turn the tangled mess into a working machine.</p>
         </div>
         <div class="process-step bg-glass p-6 rounded-xl">
           <div class="step-number bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
           <h3 class="text-xl font-bold text-white mb-2">Execute</h3>
-          <p class="text-gray-300">You execute the plan. I provide support, answer questions, and help you avoid common pitfalls.</p>
+          <p class="text-gray-300">Your team executes the plan. I provide support, answer questions, and help you avoid common pitfalls. Streamlined execution, not chaos.</p>
         </div>
         <div class="process-step bg-glass p-6 rounded-xl">
           <div class="step-number bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">4</div>
-          <h3 class="text-xl font-bold text-white mb-2">Support</h3>
-          <p class="text-gray-300">Ongoing guidance ensures your systems evolve without accumulating waste. Retainer clients get priority access.</p>
+          <h3 class="text-xl font-bold text-white mb-2">Optimize</h3>
+          <p class="text-gray-300">Ongoing guidance ensures your company evolves without accumulating new complexity. Retainer clients get priority access to keep the machine tuned.</p>
         </div>
       </div>
     </section>
@@ -193,12 +193,12 @@ const handleTierInquiry = (tier) => {
       <h2 class="text-3xl font-bold text-white text-center mb-12">What Clients Say</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="testimonial bg-glass p-6 rounded-xl">
-          <p class="text-gray-300 italic mb-4">"Saved me $8k on a rig that crushes my old one. Peter's recommendations were spot-on—used Threadripper, upgraded GPU, and I'm set for the next decade."</p>
-          <p class="text-white font-semibold">— Engineering Founder</p>
+          <p class="text-gray-300 italic mb-4">"CUO transformed our chaotic tech stack into a streamlined machine. Saved us $50k in wasted infrastructure and cut deployment time by 70%. The 48-hour audit was brutal but necessary."</p>
+          <p class="text-white font-semibold">— Startup CTO</p>
         </div>
         <div class="testimonial bg-glass p-6 rounded-xl">
-          <p class="text-gray-300 italic mb-4">"The retainer pays for itself. Every $500+ purchase gets a quick sanity check. No more impulse buys that collect dust."</p>
-          <p class="text-white font-semibold">— Tech Executive</p>
+          <p class="text-gray-300 italic mb-4">"The retainer pays for itself. Every major decision gets Power Law Risk analysis. No more expensive mistakes. Our company runs like a tuned machine now."</p>
+          <p class="text-white font-semibold">— Company Founder</p>
         </div>
       </div>
     </section>
@@ -212,16 +212,16 @@ const handleTierInquiry = (tier) => {
           <p class="text-gray-300">Retainer clients get responses within 24-48 hours. For urgent decisions, I prioritize based on impact. One-off audits are typically completed within 48 hours of starting.</p>
         </div>
         <div class="faq-item bg-glass p-6 rounded-xl">
-          <h3 class="text-xl font-bold text-white mb-2">Tech optimization or investment consulting?</h3>
-          <p class="text-gray-300">Both. You choose the focus—optimize your startup's tech stack for scale, or get investment strategy with Power Law Risk analysis. Some clients do both. The goal is value, not ideology.</p>
+          <h3 class="text-xl font-bold text-white mb-2">Tech optimization or Deep Tech Investment Strategy?</h3>
+          <p class="text-gray-300">Both. You choose the focus—optimize your startup's tech stack for scale, or get Deep Tech Investment Strategy with Power Law Risk analysis. Some clients do both. The goal is value, not ideology.</p>
         </div>
         <div class="faq-item bg-glass p-6 rounded-xl">
-          <h3 class="text-xl font-bold text-white mb-2">What if I already made decisions?</h3>
-          <p class="text-gray-300">We can still optimize. I'll help you extract maximum value from what you have, identify what to pivot/upgrade, and plan the next phase. No judgment—just better decisions going forward.</p>
+          <h3 class="text-xl font-bold text-white mb-2">What if our company already made bad decisions?</h3>
+          <p class="text-gray-300">We can still transform. I'll help you extract maximum value from what you have, identify what to pivot/upgrade, and plan the next phase. No judgment—just cut through the complexity and build a working machine.</p>
         </div>
         <div class="faq-item bg-glass p-6 rounded-xl">
-          <h3 class="text-xl font-bold text-white mb-2">What is Power Law Risk?</h3>
-          <p class="text-gray-300">Power Law Risk is the framework for identifying asymmetric opportunities—bets where the upside massively outweighs the downside. It's an asset when you know where to look. I help you find those.</p>
+          <h3 class="text-xl font-bold text-white mb-2">What is Power Law Risk in Deep Tech?</h3>
+          <p class="text-gray-300">Power Law Risk is the framework for identifying asymmetric opportunities in Deep Tech—bets where the upside massively outweighs the downside. For companies, it means focusing on the 20% of Deep Tech investment decisions that drive 80% of value. I help you find those.</p>
         </div>
         <div class="faq-item bg-glass p-6 rounded-xl">
           <h3 class="text-xl font-bold text-white mb-2">What's your refund policy?</h3>

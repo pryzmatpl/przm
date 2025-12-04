@@ -187,8 +187,8 @@ const routes = [
     component: DefaultView,
     meta: {
       title: 'Chief Upgrade Officer - Pryzm.at',
-      description: 'Upgrade without the waste. Personal purchasing consultant for engineers and founders. Optimize your tech, car, and office setup for long-term value.',
-      keywords: 'personal tech consultant, BMW upgrade advisor, durable PC build service, tech upgrade advisor, purchasing consultant, anti-waste purchasing'
+      description: 'The Sword that Cuts the Gordian Knot in tech. Transform your startup or company from a tangled mess into a streamlined, tuned, working machine. CUO cuts through technical debt and wasted resources.',
+      keywords: 'company transformation, startup optimization, tech stack audit, complexity reduction, technical debt, company streamlining, Power Law Risk, investment strategy'
     }
   },
   {

@@ -12,7 +12,7 @@ const $t = inject('$t');
 const solutions = [
   {
     title: 'Chief Upgrade Officer',
-    text: 'Upgrade without the waste. Optimize your tech, car, and office setup for long-term value. No impulse buys, just durable systems that compound.',
+    text: 'The Sword that Cuts the Gordian Knot in tech. Transform your tangled company into a streamlined, tuned, working machine. Cut through technical debt and wasted resources.',
     link: 'service/cuo',
   },
   {

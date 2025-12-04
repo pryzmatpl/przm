@@ -119,10 +119,10 @@
         
         <div class="cuo-teaser-card card max-w-5xl mx-auto">
           <div class="cuo-content">
-            <h3 class="text-2xl font-bold mb-4">I don't impulse-buy. Neither should you.</h3>
+            <h3 class="text-2xl font-bold mb-4">The Sword that Cuts the Gordian Knot</h3>
             <p class="text-lg text-gray-300 mb-6">
-              Tired of $10k regrets on tech that dies in 2 years? Or missing the one investment that could 10x your startup? 
-              I turn waste into weapons and risk into returns. Optimize your tech stack OR consult on investments where Power Law Risk becomes your asset.
+              Your startup is a tangled mess of technical debt and wasted resources—a Gordian Knot of complexity. CUO cuts through it and transforms your company into a streamlined, tuned, working machine. 
+              Optimize your tech stack OR consult on Deep Tech Investment Strategy where Power Law Risk becomes your asset.
             </p>
             
             <div class="cuo-tiers-preview grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
