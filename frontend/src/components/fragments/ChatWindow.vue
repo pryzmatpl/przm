@@ -88,6 +88,22 @@ const quickReplyResponses = {
       { label: 'Book Strategy Call', value: 'book_investment', action: 'calendly' },
       { label: 'See Investment Tier', value: 'retainer_info' }
     ]
+  },
+  email_contact: {
+    content: "You can reach me at pryzmat@pryzmat.pl. For CUO inquiries, mention which tier interests you (48-Hour Purge, Retainer, or Niche Builds). I typically respond within 24 hours.",
+    quickReplies: [
+      { label: 'Book Call Instead', value: 'book_call', action: 'calendly' },
+      { label: 'See CUO Page', value: 'cuo_page', action: 'link' }
+    ]
+  },
+  more_info: {
+    content: "CUO offers three tiers: 48-Hour Purge ($3-5k), Annual Retainer ($15-25k/yr), and Niche Builds ($7-12k). All focus on optimizing tech stacks OR investment strategy with Power Law Risk analysis. Want details on a specific tier?",
+    quickReplies: [
+      { label: '48-Hour Purge', value: 'audit' },
+      { label: 'Annual Retainer', value: 'retainer_info' },
+      { label: 'Niche Builds', value: 'gear' },
+      { label: 'Book Call', value: 'book_call', action: 'calendly' }
+    ]
   }
 };
 
@@ -138,6 +154,20 @@ const addMessage = (role, content, quickReplies = null) => {
   scrollToBottom();
 };
 
+// Detect booking/scheduling intent
+const isBookingIntent = (message) => {
+  const bookingKeywords = [
+    'schedule', 'book', 'booking', 'call', 'meeting', 'appointment',
+    'calendar', 'calendly', 'time slot', 'available', 'when can we',
+    'set up a call', 'set up call', 'setup call', 'lets schedule',
+    'let\'s schedule', 'i want to book', 'i\'d like to book',
+    'can we schedule', 'can we book', 'would like to schedule',
+    'arrange a call', 'arrange call', 'set a time', 'set time'
+  ];
+  const lowerMessage = message.toLowerCase();
+  return bookingKeywords.some(keyword => lowerMessage.includes(keyword));
+};
+
 const sendMessage = async () => {
   if (newMessage.value.trim() === '') return;
 
@@ -145,13 +175,34 @@ const sendMessage = async () => {
   addMessage('user', userContent);
   newMessage.value = '';
   showQuickReplies.value = false;
+  
+  // Check for booking intent first
+  if (isBookingIntent(userContent)) {
+    addMessage('assistant', `Perfect! Here's my calendar: ${CALENDLY_URL}\n\nPick a time that works—we'll discuss your setup and see which CUO tier fits. Looking forward to it!`, [
+      { label: 'Open Calendar', value: 'open_calendly', action: 'calendly' },
+      { label: 'Tell Me More First', value: 'more_info' }
+    ]);
+    showQuickReplies.value = true;
+    return;
+  }
+  
   isLoading.value = true;
-
   await sendMessageToAI();
 };
 
 const sendMessageToAI = async () => {
   try {
+    // Check last user message for booking intent (in case it wasn't caught earlier)
+    const lastUserMessage = [...messages.value].reverse().find(msg => msg.role === 'user');
+    if (lastUserMessage && isBookingIntent(lastUserMessage.content)) {
+      addMessage('assistant', `Perfect! Here's my calendar: ${CALENDLY_URL}\n\nPick a time that works—we'll discuss your setup and see which CUO tier fits. Looking forward to it!`, [
+        { label: 'Open Calendar', value: 'open_calendly', action: 'calendly' },
+        { label: 'Tell Me More First', value: 'more_info' }
+      ]);
+      showQuickReplies.value = true;
+      return;
+    }
+    
     // Prepend system context to guide AI toward CUO
     // Limit message history to last 6 messages for cost efficiency
     const recentMessages = messages.value.slice(-6);
@@ -192,7 +243,20 @@ const sendMessageToAI = async () => {
     }
   } catch (err) {
     console.error('Error:', err);
-    addMessage('assistant', 'Sorry, an error occurred. You can email me at pryzmat@pryzmat.pl or book a call directly.');
+    // Check if last message was about booking
+    const lastUserMessage = [...messages.value].reverse().find(msg => msg.role === 'user');
+    if (lastUserMessage && isBookingIntent(lastUserMessage.content)) {
+      addMessage('assistant', `No problem! Here's my calendar: ${CALENDLY_URL}\n\nPick a time that works for you.`, [
+        { label: 'Open Calendar', value: 'open_calendly', action: 'calendly' }
+      ]);
+      showQuickReplies.value = true;
+    } else {
+      addMessage('assistant', `Sorry, an error occurred. You can email me at pryzmat@pryzmat.pl or book a call directly: ${CALENDLY_URL}`, [
+        { label: 'Book a Call', value: 'book_call', action: 'calendly' },
+        { label: 'Email Instead', value: 'email_contact' }
+      ]);
+      showQuickReplies.value = true;
+    }
   } finally {
     isLoading.value = false;
     scrollToBottom();
