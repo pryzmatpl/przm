@@ -140,46 +140,84 @@ const routes = [
     }
   },
   {
+    path: '/service/detailing',
+    name: 'detailing',
+    component: DefaultView,
+    meta: {
+      title: 'Code Detailing - Pryzm.at',
+      description: 'Remove scratches, bruises and dents from your product\'s code with expert testing and rapid delivery. Transform your codebase from functional to excellent.',
+      keywords: 'code refactoring, code testing, code quality, technical debt, containerization'
+    }
+  },
+  {
     path: '/service/cloudexit',
     name: 'cloudexit',
     component: DefaultView,
-    redirect: '/services/cloud-migration'
+    meta: {
+      title: 'Cloud Exit - Pryzm.at',
+      description: 'Move your data on-prem. Leave behind the sky-high costs and scale on your own terms. Break free from vendor lock-in.',
+      keywords: 'cloud migration, on-premises, data sovereignty, vendor lock-in, infrastructure migration'
+    }
   },
   {
     path: '/service/ai',
     name: 'ai',
     component: DefaultView,
-    redirect: '/services/ai-assistant'
+    meta: {
+      title: 'On-Premises AI - Pryzm.at',
+      description: 'On-premises AI solutions. Harness the power of AI while ensuring full data privacy. Your data, your rules.',
+      keywords: 'on-premises AI, private AI, AI infrastructure, data privacy, AI agents'
+    }
   },
   {
     path: '/service/3d',
     name: 'three',
     component: DefaultView,
-    redirect: '/services/3d-visualization'
+    meta: {
+      title: '3D Services - Pryzm.at',
+      description: 'Scan or print your reality. Bring concepts to life with precision scanning & 3D printing. From concept to creation.',
+      keywords: '3D scanning, 3D printing, rapid prototyping, CAD modeling, reverse engineering'
+    }
   },
   {
     path: '/service/backup',
     name: 'backup',
     component: DefaultView,
-    redirect: '/services/data-backup'
+    meta: {
+      title: 'Data Backup - Pryzm.at',
+      description: 'Comprehensive data backup solutions for your infrastructure.',
+      keywords: 'data backup, disaster recovery, data protection'
+    }
   },
   {
     path: '/service/mission',
     name: 'mission',
     component: DefaultView,
-    redirect: '/services/mission-critical'
+    meta: {
+      title: 'Mission Critical - Pryzm.at',
+      description: 'Mission-critical solutions for high-stakes environments.',
+      keywords: 'mission critical, high availability, reliability'
+    }
   },
   {
     path: '/service/diligence',
     name: 'diligence',
     component: DefaultView,
-    redirect: '/services/due-diligence'
+    meta: {
+      title: 'Due Diligence - Pryzm.at',
+      description: 'Objective feedback on technical projects. Cut through inefficiencies and identify waste. No fluff, just facts.',
+      keywords: 'technical due diligence, project evaluation, cost analysis, technical audit'
+    }
   },
   {
     path: '/service/appraisal',
     name: 'appraisal',
     component: DefaultView,
-    redirect: '/services/tech-appraisal'
+    meta: {
+      title: 'Tech Appraisal - Pryzm.at',
+      description: 'Technical appraisal and evaluation services.',
+      keywords: 'tech appraisal, technology evaluation'
+    }
   },
   {
     path: '/service/cuo',

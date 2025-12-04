@@ -39,6 +39,7 @@ const componentMap = {
   Diligence: () => import('@/components/pages/service/Diligence.vue'),
   Appraisal: () => import('@/components/pages/service/Appraisal.vue'),
   Cuo: () => import('@/components/pages/service/CUO.vue'),
+  Detailing: () => import('@/components/pages/service/Detailing.vue'),
 };
 
 /**
