@@ -171,14 +171,16 @@ const isBookingIntent = (message) => {
 // Detect technical questions
 const isTechnicalQuestion = (message) => {
   const technicalKeywords = [
+    'amd', 'intel', 'cpu', 'processor', 'gpu', 'graphics', 'ram', 'memory',
     'how does', 'how do', 'how to', 'what is', 'what are', 'explain',
-    'why does', 'why do', 'difference between', 'vs', 'versus',
+    'why does', 'why do', 'difference between', 'vs', 'versus', 'better',
     'architecture', 'algorithm', 'implementation', 'code', 'programming',
     'api', 'database', 'server', 'framework', 'library', 'stack',
     'performance', 'optimization', 'scalability', 'security', 'deployment',
     'docker', 'kubernetes', 'aws', 'cloud', 'infrastructure',
     'javascript', 'python', 'react', 'vue', 'node', 'backend', 'frontend',
-    'sql', 'nosql', 'redis', 'cache', 'queue', 'microservices'
+    'sql', 'nosql', 'redis', 'cache', 'queue', 'microservices',
+    'threadripper', 'ryzen', 'core i', 'xeon', 'nvidia', 'radeon'
   ];
   const lowerMessage = message.toLowerCase();
   const hasQuestionMark = message.includes('?');
@@ -189,11 +191,32 @@ const isTechnicalQuestion = (message) => {
     /^(how|what|why|when|where|which|who)\s+/i,
     /^can you/i,
     /^could you/i,
-    /^would you/i
+    /^would you/i,
+    /better to/i,
+    /should i/i,
+    /which.*better/i,
+    /what.*difference/i
   ];
   const hasQuestionPattern = questionPatterns.some(pattern => pattern.test(message.trim()));
   
-  return (hasQuestionMark || hasQuestionPattern) && hasTechnicalKeyword;
+  // If it has technical keywords, it's technical (even without question mark)
+  return hasTechnicalKeyword || (hasQuestionMark && hasQuestionPattern);
+};
+
+// Detect CUO-related questions
+const isCUOQuestion = (message) => {
+  const cuoKeywords = [
+    'cuo', 'chief upgrade officer', 'upgrade officer',
+    'understand.*offer', 'what.*cuo', 'tell me.*cuo',
+    'cuo.*offer', 'cuo.*service', 'cuo.*tier',
+    '48.*hour', 'purge.*rebuild', 'retainer', 'niche.*build',
+    'power law', 'investment.*strategy'
+  ];
+  const lowerMessage = message.toLowerCase();
+  return cuoKeywords.some(keyword => {
+    const regex = new RegExp(keyword, 'i');
+    return regex.test(lowerMessage);
+  });
 };
 
 // Get last user message for context
@@ -236,6 +259,17 @@ const sendMessageToAI = async () => {
       return;
     }
     
+    // Check if it's a technical question - answer directly (Elon style)
+    if (lastUserMessage && isTechnicalQuestion(lastUserMessage.content)) {
+      const technicalAnswer = generateElonStyleAnswer(lastUserMessage.content);
+      addMessage('assistant', technicalAnswer, [
+        { label: 'Book CUO Consultation', value: 'book_call', action: 'calendly' },
+        { label: 'Ask Another Question', value: 'ask_another' }
+      ]);
+      showQuickReplies.value = true;
+      return;
+    }
+    
     // Prepend system context to guide AI toward CUO
     // Limit message history to last 6 messages for cost efficiency
     const recentMessages = messages.value.slice(-6);
@@ -259,7 +293,16 @@ const sendMessageToAI = async () => {
       }),
     });
 
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
     const result = await response.json();
+    
+    if (result.error) {
+      throw new Error(result.error);
+    }
+    
     const reply = result.reply || 'I had trouble responding. Let me know what you need.';
 
     addMessage('assistant', reply);
@@ -275,18 +318,25 @@ const sendMessageToAI = async () => {
       }, 1000);
     }
   } catch (err) {
-    console.error('Error:', err);
+    console.error('Error calling API:', err);
     const lastUserMessage = getLastUserMessage();
     
+    if (!lastUserMessage) {
+      addMessage('assistant', 'Sorry, I encountered an error. Please try again or email me at pryzmat@pryzmat.pl');
+      isLoading.value = false;
+      scrollToBottom();
+      return;
+    }
+    
     // Check if last message was about booking
-    if (lastUserMessage && isBookingIntent(lastUserMessage.content)) {
+    if (isBookingIntent(lastUserMessage.content)) {
       addMessage('assistant', `No problem! Here's my calendar: ${CALENDLY_URL}\n\nPick a time that works for you.`, [
         { label: 'Open Calendar', value: 'open_calendly', action: 'calendly' }
       ]);
       showQuickReplies.value = true;
     } 
     // Check if it's a technical question - answer like Elon (Pareto 20/80)
-    else if (lastUserMessage && isTechnicalQuestion(lastUserMessage.content)) {
+    else if (isTechnicalQuestion(lastUserMessage.content)) {
       const technicalAnswer = generateElonStyleAnswer(lastUserMessage.content);
       addMessage('assistant', technicalAnswer, [
         { label: 'Book CUO Consultation', value: 'book_call', action: 'calendly' },
@@ -294,9 +344,19 @@ const sendMessageToAI = async () => {
       ]);
       showQuickReplies.value = true;
     }
-    // Default: redirect to CUO focus
+    // Check if it's a CUO question - provide helpful info
+    else if (isCUOQuestion(lastUserMessage.content)) {
+      addMessage('assistant', 'CUO (Chief Upgrade Officer) helps you optimize tech stacks OR investment strategy with Power Law Risk analysis. Three tiers: 48-Hour Purge ($3-5k), Annual Retainer ($15-25k/yr), Niche Builds ($7-12k). Want details on a specific tier?', [
+        { label: '48-Hour Purge', value: 'audit' },
+        { label: 'Annual Retainer', value: 'retainer_info' },
+        { label: 'Niche Builds', value: 'gear' },
+        { label: 'Book Call', value: 'book_call', action: 'calendly' }
+      ]);
+      showQuickReplies.value = true;
+    }
+    // Only redirect to CUO if it's truly off-topic AND we have an error
     else {
-      addMessage('assistant', `Let's focus on what matters: optimizing your setup or investment strategy. That's what CUO does—turn waste into weapons, optimize for long-term value.\n\nWant to discuss your specific situation? Book a call: ${CALENDLY_URL}`, [
+      addMessage('assistant', `I had trouble processing that. Let's focus on what matters: optimizing your setup or investment strategy. That's what CUO does—turn waste into weapons, optimize for long-term value.\n\nWant to discuss your specific situation? Book a call: ${CALENDLY_URL}`, [
         { label: 'Book CUO Call', value: 'book_call', action: 'calendly' },
         { label: 'See CUO Tiers', value: 'cuo_page', action: 'link' },
         { label: 'Email Instead', value: 'email_contact' }
@@ -312,6 +372,11 @@ const sendMessageToAI = async () => {
 // Generate Elon-style technical answer (Pareto 20/80 principle)
 const generateElonStyleAnswer = (question) => {
   const lowerQuestion = question.toLowerCase();
+  
+  // CPU/Processor questions (AMD vs Intel)
+  if (lowerQuestion.includes('amd') || lowerQuestion.includes('intel') || lowerQuestion.includes('cpu') || lowerQuestion.includes('processor')) {
+    return "AMD for value and cores (Threadripper crushes workloads). Intel for single-thread performance and compatibility. For CUO builds, I spec based on workload: AMD for parallel work, Intel for legacy/compatibility. The 20%: match CPU to actual use case, not hype. Most people over-spec.";
+  }
   
   // Architecture/Infrastructure questions
   if (lowerQuestion.includes('architecture') || lowerQuestion.includes('infrastructure') || lowerQuestion.includes('scalability')) {
