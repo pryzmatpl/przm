@@ -121,8 +121,8 @@
           <div class="cuo-content">
             <h3 class="text-2xl font-bold mb-4">I don't impulse-buy. Neither should you.</h3>
             <p class="text-lg text-gray-300 mb-6">
-              Tired of $10k regrets on gadgets that die in 2 years? I turn waste into weapons. 
-              Optimize your tech, car, and office setup for long-term value. No fluff, just durable systems that compound.
+              Tired of $10k regrets on tech that dies in 2 years? Or missing the one investment that could 10x your startup? 
+              I turn waste into weapons and risk into returns. Optimize your tech stack OR consult on investments where Power Law Risk becomes your asset.
             </p>
             
             <div class="cuo-tiers-preview grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">

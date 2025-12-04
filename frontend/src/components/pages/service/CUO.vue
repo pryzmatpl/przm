@@ -212,16 +212,16 @@ const handleTierInquiry = (tier) => {
           <p class="text-gray-300">Retainer clients get responses within 24-48 hours. For urgent decisions, I prioritize based on impact. One-off audits are typically completed within 48 hours of starting.</p>
         </div>
         <div class="faq-item bg-glass p-6 rounded-xl">
-          <h3 class="text-xl font-bold text-white mb-2">Used gear only?</h3>
-          <p class="text-gray-300">Not exclusively. I recommend used where it makes sense (30-70% savings on depreciated but solid gear). New when durability or warranty matters. The goal is value, not ideology.</p>
+          <h3 class="text-xl font-bold text-white mb-2">Tech optimization or investment consulting?</h3>
+          <p class="text-gray-300">Both. You choose the focus—optimize your startup's tech stack for scale, or get investment strategy with Power Law Risk analysis. Some clients do both. The goal is value, not ideology.</p>
         </div>
         <div class="faq-item bg-glass p-6 rounded-xl">
-          <h3 class="text-xl font-bold text-white mb-2">What if I already bought something?</h3>
-          <p class="text-gray-300">We can still optimize. I'll help you extract maximum value from what you have, identify what to sell/upgrade, and plan the next phase. No judgment—just better decisions going forward.</p>
+          <h3 class="text-xl font-bold text-white mb-2">What if I already made decisions?</h3>
+          <p class="text-gray-300">We can still optimize. I'll help you extract maximum value from what you have, identify what to pivot/upgrade, and plan the next phase. No judgment—just better decisions going forward.</p>
         </div>
         <div class="faq-item bg-glass p-6 rounded-xl">
-          <h3 class="text-xl font-bold text-white mb-2">Do you handle the actual purchasing?</h3>
-          <p class="text-gray-300">For Niche Builds, yes—I source and vet. For other tiers, you buy. I provide the shopping list, links, and guidance. You maintain control and relationships with vendors.</p>
+          <h3 class="text-xl font-bold text-white mb-2">What is Power Law Risk?</h3>
+          <p class="text-gray-300">Power Law Risk is the framework for identifying asymmetric opportunities—bets where the upside massively outweighs the downside. It's an asset when you know where to look. I help you find those.</p>
         </div>
         <div class="faq-item bg-glass p-6 rounded-xl">
           <h3 class="text-xl font-bold text-white mb-2">What's your refund policy?</h3>
