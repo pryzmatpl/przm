@@ -182,6 +182,16 @@ const routes = [
     redirect: '/services/tech-appraisal'
   },
   {
+    path: '/service/cuo',
+    name: 'cuo',
+    component: DefaultView,
+    meta: {
+      title: 'Chief Upgrade Officer - Pryzm.at',
+      description: 'Upgrade without the waste. Personal purchasing consultant for engineers and founders. Optimize your tech, car, and office setup for long-term value.',
+      keywords: 'personal tech consultant, BMW upgrade advisor, durable PC build service, tech upgrade advisor, purchasing consultant, anti-waste purchasing'
+    }
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: DefaultView,

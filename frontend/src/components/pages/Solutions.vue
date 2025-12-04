@@ -11,6 +11,11 @@ const $t = inject('$t');
 
 const solutions = [
   {
+    title: 'Chief Upgrade Officer',
+    text: 'Upgrade without the waste. Optimize your tech, car, and office setup for long-term value. No impulse buys, just durable systems that compound.',
+    link: 'service/cuo',
+  },
+  {
     title: 'Code Detailing',
     text: 'Remove scratches, bruises and dents from your product\'s code with expert testing and rapid delivery',
     link: 'service/detailing',

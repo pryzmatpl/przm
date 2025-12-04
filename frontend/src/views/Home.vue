@@ -109,6 +109,57 @@
       </div>
     </section>
     
+    <!-- CUO Teaser Section -->
+    <section class="cuo-teaser-section section mt-20">
+      <div class="container">
+        <div class="section-header">
+          <h2>Chief Upgrade Officer</h2>
+          <p class="text-xl">Upgrade Without the Waste</p>
+        </div>
+        
+        <div class="cuo-teaser-card card max-w-5xl mx-auto">
+          <div class="cuo-content">
+            <h3 class="text-2xl font-bold mb-4">I don't impulse-buy. Neither should you.</h3>
+            <p class="text-lg text-gray-300 mb-6">
+              Tired of $10k regrets on gadgets that die in 2 years? I turn waste into weapons. 
+              Optimize your tech, car, and office setup for long-term value. No fluff, just durable systems that compound.
+            </p>
+            
+            <div class="cuo-tiers-preview grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div class="tier-preview bg-gray-800/50 p-4 rounded-lg border border-blue-500/20">
+                <div class="text-sm text-blue-400 font-semibold mb-2">48-Hour Purge & Rebuild</div>
+                <div class="text-2xl font-bold text-white mb-2">$3-5k</div>
+                <p class="text-sm text-gray-400">Complete audit + upgrade plan</p>
+              </div>
+              <div class="tier-preview bg-gray-800/50 p-4 rounded-lg border border-purple-500/20 border-2">
+                <div class="text-sm text-purple-400 font-semibold mb-2">Annual Retainer</div>
+                <div class="text-2xl font-bold text-white mb-2">$15-25k/yr</div>
+                <p class="text-sm text-gray-400">Unlimited async advice</p>
+              </div>
+              <div class="tier-preview bg-gray-800/50 p-4 rounded-lg border border-green-500/20">
+                <div class="text-sm text-green-400 font-semibold mb-2">Niche Builds</div>
+                <div class="text-2xl font-bold text-white mb-2">$7-12k</div>
+                <p class="text-sm text-gray-400">Custom certified setups</p>
+              </div>
+            </div>
+            
+            <div class="cuo-cta flex flex-col sm:flex-row gap-4 justify-center">
+              <router-link to="/service/cuo" class="btn btn-primary">Learn More</router-link>
+              <a 
+                href="https://calendly.com/piotr-slupski-pryzmat/30min"
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+                @click="trackCalendlyClick"
+              >
+                Book 15-min Audit Call
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- Features Section -->
     <section class="features-section section mt-20">
       <div class="container">
@@ -297,6 +348,15 @@ export default {
     handleSlideClick(slide) {
       if (slide.link) {
         this.$router.push(slide.link);
+      }
+    },
+    trackCalendlyClick() {
+      if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'click', {
+          event_category: 'CUO',
+          event_label: 'Calendly CTA',
+          value: 1
+        });
       }
     }
   },
@@ -794,6 +854,41 @@ input:checked + .slider:before {
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+.cuo-teaser-card {
+  background: linear-gradient(135deg, rgba(19, 27, 43, 0.9), rgba(30, 41, 59, 0.9));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 3rem;
+  transition: all 0.3s ease;
+}
+
+.cuo-teaser-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+}
+
+.cuo-content {
+  text-align: center;
+}
+
+.tier-preview {
+  transition: all 0.3s ease;
+}
+
+.tier-preview:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+@media (max-width: 768px) {
+  .cuo-teaser-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cuo-tiers-preview {
+    grid-template-columns: 1fr;
   }
 }
 </style> 
