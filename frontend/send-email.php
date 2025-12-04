@@ -66,12 +66,13 @@ try {
         ),
     );
 
-    // First API call to OpenAI
+    // First API call to OpenAI - using cost-efficient model
     $payload = array(
-        'model' => 'gpt-4-turbo', // Use a model that supports function-calling
+        'model' => 'gpt-4o-mini', // Cost-efficient model with function-calling support
         'messages' => $messages,
         'tools' => $tools,
-        'store' => true,
+        'max_tokens' => 150, // Limit response length for cost efficiency
+        'temperature' => 0.7, // Balanced creativity/efficiency
     );
 
     $ch = curl_init('https://api.openai.com/v1/chat/completions');
@@ -154,8 +155,10 @@ try {
         // Second API call with tool call results
         $updated_messages = array_merge($messages, array($first_message), $tool_messages);
         $second_payload = array(
-            'model' => 'gpt-4-turbo',
+            'model' => 'gpt-4o-mini',
             'messages' => $updated_messages,
+            'max_tokens' => 150, // Limit response length for cost efficiency
+            'temperature' => 0.7,
         );
 
         $ch = curl_init('https://api.openai.com/v1/chat/completions');
